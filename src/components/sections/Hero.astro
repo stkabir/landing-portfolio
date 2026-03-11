@@ -14,9 +14,9 @@ const lastName = nameParts.slice(1).join(" "); // "Ángel Durán"
 <section
   class="relative min-h-screen flex flex-col items-center justify-center px-4 py-32 text-center overflow-hidden cyber-noise"
 >
-  <!-- Enhanced circuit grid background layer -->
+  <!-- Circuit grid background layer -->
   <div
-    class="absolute inset-0 pointer-events-none opacity-[0.08] cyber-grid"
+    class="absolute inset-0 pointer-events-none opacity-[0.05] cyber-grid"
   ></div>
 
   <!-- Floating data streams -->
@@ -28,7 +28,7 @@ const lastName = nameParts.slice(1).join(" "); // "Ángel Durán"
 
   <!-- Enhanced status badge with neon border -->
   <div
-    class="relative z-10 inline-flex items-center gap-3 cyber-neon-border px-6 py-3 mb-12 font-ui text-[10px] sm:text-xs uppercase tracking-[0.3em] text-accent cyber-chamfer-sm"
+    class="relative z-10 inline-flex items-center gap-3 border border-accent/40 bg-accent/5 px-5 py-2 mb-10 font-ui text-[10px] sm:text-xs uppercase tracking-[0.3em] text-accent cyber-chamfer neon-glow-sm"
   >
     <span
       class="h-2 w-2 rounded-full bg-accent animate-pulse neon-glow-sm"
@@ -36,18 +36,18 @@ const lastName = nameParts.slice(1).join(" "); // "Ángel Durán"
     SYS:ONLINE — AVAILABLE_FOR_WORK.EXE
   </div>
 
-  <!-- Enhanced hero headline with dramatic glitch -->
+  <!-- Hero headline: glitch effect name -->
   <h1
     class="relative z-10 font-heading font-black uppercase leading-none mb-8 tracking-tighter"
   >
     <span
-      class="block text-[clamp(3.5rem,14vw,10rem)] cyber-glitch"
+      class="block text-[clamp(3rem,12vw,9rem)] cyber-glitch"
       data-text="{firstName}"
     >
       {firstName}
     </span>
     <span
-      class="block text-[clamp(3rem,11vw,8rem)] text-foreground drop-shadow-[0_0_30px_rgba(0,240,255,0.3)]"
+      class="block text-[clamp(2.5rem,10vw,7rem)] text-foreground drop-shadow-[0_0_20px_rgba(224,224,224,0.2)]"
     >
       {lastName}
     </span>
@@ -57,11 +57,11 @@ const lastName = nameParts.slice(1).join(" "); // "Ángel Durán"
   <div
     class="relative z-10 flex items-start justify-center gap-3 mb-12 max-w-2xl mx-auto"
   >
-    <span class="text-accent font-body text-xl sm:text-2xl mt-0.5 shrink-0 cyber-cursor"
+    <span class="text-accent font-body text-xl sm:text-2xl mt-0.5 shrink-0"
       >&gt;</span
     >
     <p
-      class="font-body text-sm sm:text-base md:text-lg text-mutedForeground text-left leading-relaxed tracking-wide"
+      class="font-body text-sm sm:text-base md:text-lg text-mutedForeground text-left leading-relaxed tracking-wide cyber-cursor"
     >
       {label}
     </p>
@@ -69,17 +69,15 @@ const lastName = nameParts.slice(1).join(" "); // "Ángel Durán"
 
   <!-- Enhanced location chip with data visualization -->
   <div
-    class="relative z-10 flex items-center gap-2.5 font-ui text-[10px] sm:text-xs uppercase tracking-[0.25em] text-mutedForeground mb-16"
+    class="relative z-10 flex items-center gap-2.5 font-ui text-[10px] sm:text-xs uppercase tracking-[0.25em] text-mutedForeground mb-14"
   >
-    <span class="text-accentSecondary text-sm animate-pulse">◈</span>
+    <span class="text-accentSecondary text-sm">◈</span>
     <span>{city}, {region}</span>
     <span class="text-border">|</span>
-    <span class="text-accentTertiary/50 font-mono">LAT 41.3°N · LON 2.0°E</span>
-    <span class="text-border">|</span>
-    <span class="text-success/70 font-mono">SIGNAL:STRONG</span>
+    <span class="text-accentTertiary/50">LAT 41.3°N · LON 2.0°E</span>
   </div>
 
-  <!-- Enhanced CTA buttons with advanced neon effects -->
+  <!-- CTA buttons — cyberpunk style -->
   <div
     class="relative z-10 flex flex-wrap items-center justify-center gap-6"
   >
@@ -87,9 +85,9 @@ const lastName = nameParts.slice(1).join(" "); // "Ángel Durán"
       email && (
         <a
           href={`mailto:${email}`}
-          class="group cyber-focus relative inline-block cyber-neon-border px-8 py-4 font-ui text-sm uppercase tracking-widest text-accent transition-all duration-300 ease-out hover:scale-105 hover:neon-glow-lg cyber-chamfer"
+          class="group cyber-focus relative inline-block border-2 border-accent bg-transparent px-7 py-3.5 font-ui text-sm uppercase tracking-widest text-accent transition-all duration-200 ease-linear hover:bg-accent hover:text-background hover:neon-glow cyber-chamfer"
         >
-          <span class="relative z-10">INITIATE_CONTACT</span>
+          CONTACT_ME
         </a>
       )
     }
@@ -99,9 +97,9 @@ const lastName = nameParts.slice(1).join(" "); // "Ángel Durán"
           href={url}
           target="_blank"
           rel="noopener noreferrer"
-          class="group cyber-focus relative inline-block cyber-neon-border--magenta px-8 py-4 font-ui text-sm uppercase tracking-widest text-accentSecondary transition-all duration-300 ease-out hover:scale-105 hover:neon-glow-secondary cyber-chamfer"
+          class="group cyber-focus relative inline-block border-2 border-accentTertiary/60 bg-transparent px-7 py-3.5 font-ui text-sm uppercase tracking-widest text-accentTertiary transition-all duration-200 ease-linear hover:bg-accentTertiary hover:text-background hover:border-accentTertiary hover:neon-glow-tertiary cyber-chamfer"
         >
-          <span class="relative z-10">ACCESS_{network.toUpperCase()}</span>
+          {network}
         </a>
       ))
     }
@@ -109,15 +107,9 @@ const lastName = nameParts.slice(1).join(" "); // "Ángel Durán"
 
   <!-- Enhanced scroll hint with data stream effect -->
   <div
-    class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 font-ui text-[10px] uppercase tracking-[0.3em] text-mutedForeground z-10"
+    class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 font-ui text-[10px] uppercase tracking-[0.3em] text-mutedForeground z-10"
   >
-    <div class="flex items-center gap-2">
-      <span>DATA_STREAM</span>
-      <span class="w-2 h-2 bg-accent rounded-full animate-pulse"></span>
-    </div>
-    <div class="flex flex-col items-center gap-1">
-      <span class="text-accent/40 text-xs">SCROLL_PROTOCOL</span>
-      <span class="animate-bounce text-accent/60 text-lg">▼</span>
-    </div>
+    <span>SCROLL</span>
+    <span class="animate-bounce text-accent/40">▼</span>
   </div>
 </section>

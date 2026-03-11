@@ -17,7 +17,7 @@ const { title, description = "Portfolio" } = Astro.props;
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <!-- Google Fonts: Orbitron (headings) + JetBrains Mono (body) + Share Tech Mono (UI) -->
+    <!-- Google Fonts for Cyberpunk Typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -28,9 +28,9 @@ const { title, description = "Portfolio" } = Astro.props;
   <body>
     <!-- ─── Fixed atmospheric background (z-0) ─────────────────────── -->
     <div class="fixed inset-0 z-0 pointer-events-none overflow-hidden">
-      <!-- Enhanced cyberpunk gradient orbs -->
+      <!-- Cyberpunk gradient orbs -->
       <div
-        class="absolute -top-40 left-1/2 -translate-x-1/2 h-[600px] w-[600px] rounded-full blur-[100px] bg-linear-to-b from-accent to-accentSecondary opacity-[0.08]"
+        class="absolute -top-40 left-1/2 -translate-x-1/2 h-[600px] w-[600px] rounded-full blur-[100px] bg-gradient-to-b from-accent to-accentSecondary opacity-[0.08]"
       ></div>
       <!-- Secondary cyan glow, bottom-right -->
       <div
@@ -39,10 +39,6 @@ const { title, description = "Portfolio" } = Astro.props;
       <!-- Tertiary magenta accent, top-left -->
       <div
         class="absolute top-20 -left-20 h-[400px] w-[400px] rounded-full blur-[120px] bg-accentSecondary opacity-[0.04]"
-      ></div>
-      <!-- Success green accent, bottom-left -->
-      <div
-        class="absolute bottom-20 -left-32 h-[300px] w-[300px] rounded-full blur-[100px] bg-success opacity-[0.03]"
       ></div>
     </div>
 
@@ -58,13 +54,13 @@ const { title, description = "Portfolio" } = Astro.props;
       "
     ></div>
 
-    <!-- Enhanced CRT scanlines overlay with noise -->
-    <div class="fixed inset-0 z-50 pointer-events-none cyber-scanlines cyber-noise"></div>
+    <!-- ─── CRT scanlines overlay (z-50, above everything) ─────────── -->
+    <div class="fixed inset-0 z-50 pointer-events-none cyber-scanlines"></div>
 
-    <!-- RGB chromatic aberration with new colors -->
+    <!-- RGB chromatic aberration -->
     <div
       class="fixed inset-0 z-50 pointer-events-none opacity-20"
-      style="background: linear-gradient(90deg, rgba(255,42,109,0.03), rgba(0,240,255,0.01), rgba(252,238,10,0.03));"
+      style="background: linear-gradient(90deg, rgba(255,0,0,0.03), rgba(0,255,0,0.01), rgba(0,0,255,0.03));"
     ></div>
 
     <!-- ─── Page content ────────────────────────────────────────────── -->
