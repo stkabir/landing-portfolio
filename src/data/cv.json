@@ -1,0 +1,272 @@
+{
+  "basics": {
+    "name": "Kabir Alberto Padilla",
+    "label": "Desarrollador Full Stack.",
+    "image": "/me.jpg",
+    "email": "kabiralberto10@gmail.com",
+    "phone": "+52 9981090161",
+    "url": "",
+    "summary": "Soy un calificado y profesional desarrollador con más de 5 años de experiencia en backend, frontend y bases de datos, fuertes habilidades creativas y analíticas para resolver problemas, me gusta mantener un aprendizaje continuo, eso me permite adaptarme fácilmente a nuevas tecnologías",
+    "location": {
+      "address": "",
+      "postalCode": "77537",
+      "city": "Cancún",
+      "countryCode": "MX",
+      "region": "México"
+    },
+    "profiles": [
+      {
+        "network": "GitHub",
+        "username": "midudev",
+        "url": "https://github.com/stkabir"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Ancona Autopartes",
+      "position": "Desarrollador Jr",
+      "startDate": "2018-12-01",
+      "endDate": "2019-12-01",
+      "summary": " Formé parte del equipo de programación para aplicaciones de desarrollo interno por parte de la empresa en diferentes áreas de la misma, que sirven para ayudar y mejorar los procesos actuales. Por ejemplo, una App de escritorio (C#) que sirve para registrar entradas y salidas de los repartidores mediante un lector de barras, y un Sistema web (React) para la administración y uso interno de la empresa.",
+      "highlights": [
+        "Started the company"
+      ]
+    },
+    {
+      "name": "Soluciones Tecnológicas",
+      "position": "Desarrollador Full Stack",
+      "startDate": "2020-01-01",
+      "endDate": "2022-05-01",
+      "summary": "Desarrollé varios proyectos desde cero en Laravel, uno de los cuales es un marketplace, que contiene una pasarela de pago, 3 dashboards para diferentes tipos de usuario, envío de correos, su propia API, mapas personalizados de Google y es amigable con SEO.",
+      "highlights": [
+        "Started the company"
+      ]
+    },
+    {
+      "name": "Avansys",
+      "position": "Desarrollador Full Stack",
+      "startDate": "2022-06-01",
+      "endDate": "2023-01-01",
+      "summary": "Participé en varios proyectos hechos en Laravel, cuentan con un sistema de autenticación, roles y permisos, uno de los proyectos fue para el gobierno de Jalisco que consiste en poder tomar medidas de diferentes cuerpos de agua para poder llevar un registro y comparar estadísticas, ver resultados, etc.",
+      "highlights": [
+        "Started the company"
+      ]
+    },
+    {
+      "name": "Dexabyte",
+      "position": "Desarrollador Senior",
+      "startDate": "2023-01-01",
+      "endDate": "2024-04-01",
+      "summary": "Colaboré en varios proyectos cómo Desarrollador Senior hechos en Laravel, Yii, Node js y PHP puro, son sistemas para la empresa o clientes de la empresa, hice modificaciones y desarrollé nuevas funciones acorde a las necesidades de los usuarios. Realicé 2 proyectos desde cero, hechos con Livewire que inserta y modifica datos, envía notificaciones por correo y validaciones en tiempo real.",
+      "highlights": [
+        "Started the company"
+      ]
+    },
+    {
+      "name": "Freelance",
+      "position": "Desarrollador Full Stack",
+      "startDate": "2024-04-01",
+      "endDate": "2025-02-01",
+      "summary": "Utilizando Laravel y Livewire, participé como desarrollador full stack dentro de un proyecto del gobierno de la ciudad de México, que se encarga de otorgar créditos a mujeres rurales para emprender. Con la tecnología de Python y Flet, me encuentro desarrollando una aplicación móvil para una empresa de transportes y tours, que tiene como principal finalidad monitorear la operación de los choferes y gestionar la asignación de tareas.",
+      "highlights": [
+        "Started the company"
+      ]
+    }
+  ],
+  "education": [{
+    "institution": "Universidad del Sur",
+    "url": "https://www.uoc.edu/portal/es/index.html",
+    "area": "Ingeniero de Software",
+    "studyType": "Bachelor",
+    "startDate": "2017-09-01",
+    "endDate": "2019-04-01",
+    "score": "10.0"
+  }],
+  "skills": [
+    {
+      "name": "PHP",
+      "level": "Avanzado",
+      "keywords": [
+        "Desarrollo Web", "Backend", "Servidor"
+      ]
+    },
+    {
+      "name": "Laravel",
+      "level": "Avanzado",
+      "keywords": [
+        "Desarrollo Web", "Backend", "Servidor"
+      ]
+    },
+    {
+      "name": "C#",
+      "level": "Avanzado",
+      "keywords": [
+        "Desarrollo Web", "Backend", "Servidor"
+      ]
+    },
+    {
+      "name": "Pyhton",
+      "level": "Avanzado",
+      "keywords": [
+        "Desarrollo Web", "Backend", "Servidor"
+      ]
+    },
+    {
+      "name": "HTML",
+      "level": "Master",
+      "keywords": [
+        "Desarrollo Web", "Frontend"
+      ]
+    },
+    {
+      "name": "CSS",
+      "level": "Master",
+      "keywords": [
+        "Desarrollo Web", "Frontend", "Diseño Responsive"
+      ]
+    },
+    {
+      "name": "JavaScript",
+      "level": "Master",
+      "keywords": [
+        "Desarrollo Web", "Frontend", "Backend", "Fullstack"
+      ]
+    },
+    {
+      "name": "Tailwind",
+      "level": "Avanzado",
+      "keywords": [
+        "Desarrollo Web", "Frontend", "CSS Framework", "Diseño Responsive"
+      ]
+    },
+    {
+      "name": "TypeScript",
+      "level": "Avanzado",
+      "keywords": [
+        "Desarrollo Web", "Frontend", "Backend", "JavaScript Superset"
+      ]
+    },
+    {
+      "name": "MySQL",
+      "level": "Avanzado",
+      "keywords": [
+        "Bases de Datos", "SQL", "Almacenamiento de Datos", "Backend"
+      ]
+    },
+    {
+      "name": "Git",
+      "level": "Avanzado",
+      "keywords": [
+        "Control de Versiones", "Colaboración", "Código Fuente"
+      ]
+    },
+    {
+      "name": "GitHub",
+      "level": "Avanzado",
+      "keywords": [
+        "Control de Versiones", "Colaboración", "Código Fuente", "Git"
+      ]
+    },
+    {
+      "name": "Next.js",
+      "level": "Avanzado",
+      "keywords": [
+        "Desarrollo Web", "Frontend", "React Framework", "SSR", "Static Generation"
+      ]
+    },
+    {
+      "name": "React",
+      "level": "Avanzado",
+      "keywords": [
+        "Desarrollo Web", "Frontend", "JavaScript Library", "UI"
+      ]
+    }
+  ],
+  "languages": [
+    {
+      "language": "Spanish",
+      "fluency": "Native speaker"
+    },
+    {
+      "language": "English",
+      "fluency": "Advanced"
+    }
+  ],
+  "projects": [
+    {
+      "name": "Lomas Travel",
+      "description": "Dexabyte",
+      "highlights": [
+        "Laravel"
+      ],
+      "url": "https://lomastravel.com"
+    },
+    {
+      "name": "Cluby",
+      "description": "Soluciones Tecnológicas",
+      "highlights": [
+        "Laravel"
+      ],
+      "url": "https://cluby.mx"
+    },
+    {
+      "name": "Agua Coecytjal",
+      "description": "Avansys",
+      "highlights": [
+        "Laravel"
+      ],
+      "url": "https://l.coecytjal.org.mx"
+    },
+    {
+      "name": "México me necesita",
+      "description": "Avansys",
+      "highlights": [
+        "PHP"
+      ],
+      "url": "https://mmn.org.mx"
+    },
+    {
+      "name": "Mujeres Rurales",
+      "description": "Freelance",
+      "highlights": [
+        "Laravel",
+        "Livewire"
+      ],
+      "url": "https://cdmx.gob.mx"
+    },
+    {
+      "name": "Ancona",
+      "description": "Ancona Autopartes",
+      "highlights": [
+        "React"
+      ],
+      "url": "https://www.anconaautopartes.com"
+    },
+    {
+      "name": "Maroma Beach",
+      "description": "Dexabyte",
+      "highlights": [
+        "React"
+      ],
+      "url": "https://maromabeach.com/es/"
+    },
+    {
+      "name": "El Dorado Resort",
+      "description": "Dexabyte",
+      "highlights": [
+        "React"
+      ],
+      "url": "https://www.eldoradosparesorts.com.mx/destino"
+    },
+    {
+      "name": "Dashboard Ohana",
+      "description": "Freelance",
+      "highlights": [
+        "Laravel",
+        "Livewire"
+      ],
+      "url": "https://ohanatransfers.com"
+    }
+  ]
+}

@@ -1,17 +1,47 @@
 ---
+import Layout from "../layouts/Layout.astro";
+import Nav from "../components/ui/Nav.astro";
+import Hero from "../components/sections/Hero.astro";
+import About from "../components/sections/About.astro";
+import Experience from "../components/sections/Experience.astro";
+import Education from "../components/sections/Education.astro";
+import Projects from "../components/sections/Projects.astro";
+import Skills from "../components/sections/Skills.astro";
+import cv from "../data/cv.json";
 
+const { basics } = cv;
+const { name, summary } = basics;
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title={`${name} — Portfolio`} description={summary}>
+  <Nav />
+
+  <main class="pt-16">
+    <Hero />
+    <About />
+    <Experience />
+    <Education />
+    <Projects />
+    <Skills />
+  </main>
+
+  <!-- Footer -->
+  <footer class="relative z-10 border-t border-[#2D1B4E] py-10 px-4">
+    <div
+      class="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4"
+    >
+      <p
+        class="font-mono text-xs uppercase tracking-[0.25em] text-[#E0E0E0]/20"
+      >
+        <span class="text-[#FF00FF]">◈</span>
+        {name}
+        <span class="text-[#E0E0E0]/10 mx-2">—</span>
+        {new Date().getFullYear()}
+        <span class="text-[#FF00FF]">◈</span>
+      </p>
+      <p class="font-mono text-[10px] uppercase tracking-widest text-[#E0E0E0]/15">
+        Built with Astro &amp; Tailwind · Vaporwave Design System
+      </p>
+    </div>
+  </footer>
+</Layout>

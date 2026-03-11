@@ -1,0 +1,81 @@
+---
+import "../styles/global.css";
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "Portfolio" } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <!-- Google Fonts: Orbitron (headings) + Share Tech Mono (body/UI) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Share+Tech+Mono&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- ─── Fixed atmospheric background (z-0) ─────────────────────── -->
+    <div class="fixed inset-0 z-0 pointer-events-none overflow-hidden">
+      <!-- Floating "sun" gradient orb -->
+      <div
+        class="absolute -top-40 left-1/2 -translate-x-1/2 h-[600px] w-[600px] rounded-full blur-[100px] bg-gradient-to-b from-[#FF9900] to-[#FF00FF] opacity-[0.13]"
+      ></div>
+      <!-- Secondary cyan glow, bottom-right -->
+      <div
+        class="absolute -bottom-48 -right-32 h-[500px] w-[500px] rounded-full blur-[140px] bg-[#00FFFF] opacity-[0.07]"
+      ></div>
+    </div>
+
+    <!-- ─── Perspective grid floor ─────────────────────────────────── -->
+    <div
+      class="fixed bottom-0 left-0 right-0 z-0 pointer-events-none"
+      style="
+        height: 42vh;
+        background-image:
+          linear-gradient(transparent 94%, rgba(255,0,255,0.4) 94%),
+          linear-gradient(90deg, transparent 94%, rgba(255,0,255,0.4) 94%);
+        background-size: 50px 50px;
+        transform: perspective(350px) rotateX(55deg) scaleX(1.6);
+        transform-origin: bottom center;
+        mask-image: linear-gradient(to bottom, transparent 0%, black 100%);
+        -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 100%);
+      "
+    ></div>
+
+    <!-- ─── CRT scanlines overlay (z-50, above everything) ─────────── -->
+    <div
+      class="fixed inset-0 z-50 pointer-events-none"
+      style="
+        background: repeating-linear-gradient(
+          0deg,
+          rgba(0,0,0,0) 0px,
+          rgba(0,0,0,0) 2px,
+          rgba(0,0,0,0.13) 2px,
+          rgba(0,0,0,0.13) 4px
+        );
+      "
+    ></div>
+    <!-- RGB chromatic aberration -->
+    <div
+      class="fixed inset-0 z-50 pointer-events-none opacity-25"
+      style="background: linear-gradient(90deg, rgba(255,0,0,0.05), rgba(0,255,0,0.02), rgba(0,0,255,0.05));"
+    ></div>
+
+    <!-- ─── Page content ────────────────────────────────────────────── -->
+    <div class="relative z-10">
+      <slot />
+    </div>
+  </body>
+</html>

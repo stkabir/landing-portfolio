@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+@theme {
+  /* Vaporwave / Outrun Design Tokens */
+
+  /* Typography */
+  --font-heading: "Orbitron", sans-serif;
+  --font-mono: "Share Tech Mono", monospace;
+
+  /* Color Palette */
+  --color-void: #090014;
+  --color-card-bg: #1a103c;
+  --color-magenta: #ff00ff;
+  --color-cyan: #00ffff;
+  --color-orange: #ff9900;
+  --color-fg: #e0e0e0;
+  --color-border-dark: #2d1b4e;
+
+  /* Animations */
+  --animate-pulse-slow: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Base resets */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-void);
+  color: var(--color-fg);
+  font-family: var(--font-mono);
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}

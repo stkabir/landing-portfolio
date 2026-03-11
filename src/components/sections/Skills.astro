@@ -1,0 +1,79 @@
+---
+import cv from "../../data/cv.json";
+import SectionHeading from "../ui/SectionHeading.astro";
+
+const { skills } = cv;
+
+// Pre-compute variant so full class strings are statically present for Tailwind scanning
+const magentaClasses =
+  "border-[#FF00FF]/40 bg-[#FF00FF]/5 text-[#FF00FF] hover:bg-[#FF00FF] hover:text-black hover:border-[#FF00FF] hover:shadow-[0_0_18px_#FF00FF]";
+const cyanClasses =
+  "border-[#00FFFF]/40 bg-[#00FFFF]/5 text-[#00FFFF] hover:bg-[#00FFFF] hover:text-black hover:border-[#00FFFF] hover:shadow-[0_0_18px_#00FFFF]";
+---
+
+<section id="skills" class="py-20 sm:py-32 px-4">
+  <div class="max-w-5xl mx-auto">
+    <SectionHeading tag="SKILLS.SYS" title="Skills" />
+
+    <!-- File-explorer-style window -->
+    <div
+      class="border border-[#E0E0E0]/10 border-t-2 border-t-[#FF00FF] bg-[#1a103c]/80 backdrop-blur-sm"
+    >
+      <!-- Window title bar -->
+      <div
+        class="flex items-center gap-3 border-b-2 border-[#E0E0E0]/10 bg-[#E0E0E0]/5 px-4 py-3"
+      >
+        <div class="flex gap-2">
+          <div class="h-3 w-3 rounded-full bg-[#FF00FF] shadow-[0_0_5px_#FF00FF]"></div>
+          <div class="h-3 w-3 rounded-full bg-[#FF9900] shadow-[0_0_5px_#FF9900]"></div>
+          <div class="h-3 w-3 rounded-full bg-[#00FFFF] shadow-[0_0_5px_#00FFFF]"></div>
+        </div>
+        <span
+          class="font-mono text-xs text-[#E0E0E0]/40 uppercase tracking-widest ml-2"
+          >skills/ — 18 items</span
+        >
+      </div>
+
+      <!-- Content -->
+      <div class="p-6 sm:p-8">
+        <!-- Terminal ls command -->
+        <div class="flex items-center gap-3 font-mono text-sm text-[#FF00FF]/35 mb-6">
+          <span class="text-[#00FFFF]/50">$</span>
+          <span class="text-[#E0E0E0]/25 text-xs tracking-wider"
+            >ls -la ./skills/ | sort</span
+          >
+        </div>
+
+        <!-- Skill badges — skewed, alternating magenta / cyan -->
+        <ul class="flex flex-wrap gap-3">
+          {
+            skills.map(({ name }, i) => {
+              const variantClasses = i % 2 === 0 ? magentaClasses : cyanClasses;
+              return (
+                <li
+                  class={`group -skew-x-6 inline-block cursor-default border-2 px-4 py-2 font-mono text-sm uppercase tracking-wider transition-all duration-200 hover:skew-x-0 ${variantClasses}`}
+                >
+                  <span class="inline-block skew-x-6 group-hover:skew-x-0 transition-transform duration-200">
+                    {name}
+                  </span>
+                </li>
+              );
+            })
+          }
+        </ul>
+      </div>
+
+      <!-- Status bar -->
+      <div
+        class="border-t-2 border-[#E0E0E0]/10 bg-[#090014] px-4 py-2 flex items-center justify-between"
+      >
+        <span class="font-mono text-[10px] text-[#E0E0E0]/30 uppercase tracking-widest"
+          >{skills.length} skills loaded</span
+        >
+        <span class="font-mono text-[10px] text-[#FF9900]/40 uppercase tracking-widest"
+          >STATUS: OPERATIONAL</span
+        >
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,82 @@
+---
+import cv from "../../data/cv.json";
+import SectionHeading from "../ui/SectionHeading.astro";
+
+const { projects } = cv;
+---
+
+<section id="projects" class="py-20 sm:py-32 px-4 relative overflow-hidden">
+  <!-- Background dot pattern -->
+  <div
+    class="absolute inset-0 pointer-events-none opacity-[0.035]"
+    style="background-image: radial-gradient(#FF00FF 1px, transparent 1px); background-size: 22px 22px;"
+  ></div>
+
+  <div class="max-w-6xl mx-auto relative z-10">
+    <SectionHeading tag="PROJECTS.DIR" title="Projects" />
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+      {
+        projects.map(({ name, description, highlights, url, github, isActive }) => (
+          <div class="group relative border border-[#FF00FF]/20 border-t-2 border-t-[#00FFFF] bg-[#1a103c]/80 p-6 flex flex-col gap-4 backdrop-blur-sm transition-all duration-200 hover:-translate-y-2 hover:border-[#FF00FF]/40 hover:shadow-[0_0_30px_rgba(0,255,255,0.12)]">
+            <!-- Active indicator badge -->
+            {isActive && (
+              <div class="absolute top-4 right-4 flex items-center gap-1.5">
+                <span class="h-1.5 w-1.5 rounded-full bg-[#00FFFF] animate-pulse shadow-[0_0_6px_#00FFFF]" />
+                <span class="font-mono text-[9px] uppercase tracking-widest text-[#00FFFF]/50">
+                  LIVE
+                </span>
+              </div>
+            )}
+
+            <!-- Decorative corner (bottom-right) -->
+            <div class="absolute bottom-0 right-0 h-5 w-5 border-b-2 border-r-2 border-[#FF00FF]/20 group-hover:border-[#FF00FF]/50 transition-colors duration-200" />
+
+            <!-- Project title -->
+            <h3 class="font-heading font-bold text-lg md:text-xl uppercase tracking-wide text-[#00FFFF] drop-shadow-[0_0_6px_rgba(0,255,255,0.7)] pr-14">
+              {name}
+            </h3>
+
+            <!-- Description -->
+            <p class="font-mono text-sm text-[#E0E0E0]/55 leading-relaxed flex-1">
+              {description}
+            </p>
+
+            <!-- Tech/highlights tags — skewed badges -->
+            <div class="flex flex-wrap gap-2">
+              {highlights.map((tag) => (
+                <span class="-skew-x-6 inline-block border border-[#FF00FF]/35 bg-[#FF00FF]/5 px-2.5 py-0.5 font-mono text-[10px] uppercase tracking-widest text-[#FF00FF]">
+                  <span class="inline-block skew-x-6">{tag}</span>
+                </span>
+              ))}
+            </div>
+
+            <!-- Links -->
+            <div class="flex items-center gap-3 pt-3 border-t border-[#2D1B4E]">
+              {url && (
+                <a
+                  href={url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="font-mono text-xs uppercase tracking-widest text-[#00FFFF] border border-[#00FFFF]/50 px-3 py-1.5 hover:bg-[#00FFFF] hover:text-black hover:border-[#00FFFF] hover:shadow-[0_0_15px_#00FFFF] transition-all duration-200"
+                >
+                  VISIT ↗
+                </a>
+              )}
+              {github && (
+                <a
+                  href={github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="font-mono text-xs uppercase tracking-widest text-[#FF00FF]/50 hover:text-[#FF00FF] hover:drop-shadow-[0_0_5px_rgba(255,0,255,0.8)] transition-all duration-200"
+                >
+                  &lt;/CODE&gt;
+                </a>
+              )}
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

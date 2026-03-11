@@ -1,0 +1,43 @@
+---
+const navLinks = [
+  { label: "About", href: "#about" },
+  { label: "Experience", href: "#experience" },
+  { label: "Projects", href: "#projects" },
+  { label: "Skills", href: "#skills" },
+];
+---
+
+<header
+  class="fixed top-0 left-0 right-0 z-40 flex items-center justify-between px-4 sm:px-8 py-4 border-b border-[#2D1B4E]/60 bg-[#090014]/80 backdrop-blur-md"
+>
+  <!-- Logo -->
+  <a
+    href="#"
+    class="font-heading font-black text-sm sm:text-base uppercase tracking-widest bg-gradient-to-r from-[#FF9900] via-[#FF00FF] to-[#00FFFF] bg-clip-text text-transparent drop-shadow-[0_0_10px_rgba(255,0,255,0.4)]"
+  >
+    &lt;KABIR/&gt;
+  </a>
+
+  <!-- Nav links (hidden on small mobile) -->
+  <nav class="hidden sm:flex items-center gap-1">
+    {
+      navLinks.map(({ label, href }) => (
+        <a
+          href={href}
+          class="font-mono text-xs uppercase tracking-widest px-4 py-2 text-[#E0E0E0]/50 hover:text-[#00FFFF] hover:bg-[#00FFFF]/5 transition-all duration-200 border border-transparent hover:border-[#00FFFF]/20"
+        >
+          {label}
+        </a>
+      ))
+    }
+  </nav>
+
+  <!-- Status indicator -->
+  <div
+    class="flex items-center gap-2 font-mono text-[10px] uppercase tracking-widest text-[#E0E0E0]/30"
+  >
+    <span class="h-1.5 w-1.5 rounded-full bg-[#00FFFF] animate-pulse shadow-[0_0_6px_#00FFFF]"
+    ></span>
+    <span class="hidden sm:inline">SYS:ONLINE</span>
+  </div>
+</header>

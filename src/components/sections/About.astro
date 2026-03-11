@@ -1,0 +1,78 @@
+---
+import cv from "../../data/cv.json";
+import SectionHeading from "../ui/SectionHeading.astro";
+
+const { basics } = cv;
+const { summary, name } = basics;
+---
+
+<section id="about" class="py-20 sm:py-32 px-4 relative">
+  <div class="max-w-4xl mx-auto">
+    <SectionHeading tag="ABOUT.SH" title="About Me" />
+
+    <!-- Terminal window container -->
+    <div
+      class="border-2 border-[#00FFFF] bg-black/70 shadow-[0_0_30px_rgba(0,255,255,0.12)] backdrop-blur-sm"
+    >
+      <!-- Window title bar -->
+      <div
+        class="flex items-center gap-3 border-b border-[#00FFFF]/40 bg-[#00FFFF]/5 px-4 py-3"
+      >
+        <!-- Window control dots -->
+        <div class="flex gap-2">
+          <div
+            class="h-3 w-3 rounded-full bg-[#FF00FF] shadow-[0_0_6px_#FF00FF]"
+          ></div>
+          <div
+            class="h-3 w-3 rounded-full bg-[#FF9900] shadow-[0_0_6px_#FF9900]"
+          ></div>
+          <div
+            class="h-3 w-3 rounded-full bg-[#00FFFF] shadow-[0_0_6px_#00FFFF]"
+          ></div>
+        </div>
+        <span
+          class="font-mono text-xs text-[#00FFFF]/50 uppercase tracking-widest ml-2"
+        >
+          user@{name.toLowerCase().replace(/\s+/g, "-")}:~/about.sh
+        </span>
+      </div>
+
+      <!-- Terminal body -->
+      <div class="p-6 sm:p-8 font-mono space-y-4">
+        <!-- Command line -->
+        <div class="flex items-center gap-3 text-[#FF00FF]/50 text-sm">
+          <span class="text-[#00FFFF]/60">$</span>
+          <span class="text-[#E0E0E0]/30">cat about.txt</span>
+        </div>
+
+        <!-- Output text -->
+        <p
+          class="text-[#E0E0E0]/80 text-sm sm:text-base leading-relaxed pl-4 border-l-2 border-[#FF00FF]/25"
+        >
+          {summary}
+        </p>
+
+        <!-- Second command line (decorative) -->
+        <div class="flex items-center gap-3 text-sm pt-2">
+          <span class="text-[#00FFFF]/60">$</span>
+          <span class="text-[#FF9900]/40 text-xs tracking-wider"
+            >echo $STATUS</span
+          >
+        </div>
+        <div class="flex items-center gap-3 text-sm pl-4">
+          <span class="text-[#00FFFF] text-xs tracking-widest"
+            >AVAILABLE FOR WORK · OPEN TO COLLABORATIONS</span
+          >
+        </div>
+
+        <!-- Blinking cursor -->
+        <div class="flex items-center gap-3 text-sm pt-1">
+          <span class="text-[#00FFFF]/60">$</span>
+          <span
+            class="inline-block h-4 w-2 bg-[#00FFFF] animate-pulse shadow-[0_0_6px_#00FFFF]"
+          ></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

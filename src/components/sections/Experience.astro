@@ -1,0 +1,92 @@
+---
+import cv from "../../data/cv.json";
+import SectionHeading from "../ui/SectionHeading.astro";
+
+const { work } = cv;
+---
+
+<section id="experience" class="py-20 sm:py-32 px-4 relative overflow-hidden">
+  <!-- Faint dot pattern -->
+  <div
+    class="absolute inset-0 pointer-events-none opacity-[0.04]"
+    style="background-image: radial-gradient(#00FFFF 1px, transparent 1px); background-size: 24px 24px;"
+  ></div>
+
+  <div class="max-w-5xl mx-auto relative z-10">
+    <SectionHeading tag="WORK.LOG" title="Experience" />
+
+    <!-- Timeline container -->
+    <div class="relative">
+      <!-- Central vertical line (desktop only) -->
+      <div
+        class="hidden md:block absolute left-1/2 -translate-x-px top-0 bottom-0 w-px bg-gradient-to-b from-[#FF00FF] via-[#00FFFF]/50 to-transparent"
+      ></div>
+
+      <div class="flex flex-col gap-12 md:gap-20">
+        {
+          work.map(({ name, position, url, startDate, endDate, summary }, i) => {
+            const startYear = new Date(startDate).getFullYear();
+            const endYear = endDate
+              ? new Date(endDate).getFullYear()
+              : "NOW";
+            const isLeft = i % 2 === 0;
+
+            return (
+              <div
+                class={`relative flex flex-col md:items-center gap-6 md:gap-0 ${isLeft ? "md:flex-row" : "md:flex-row-reverse"}`}
+              >
+                <!-- Timeline node (desktop) -->
+                <div class="hidden md:flex absolute left-1/2 -translate-x-1/2 z-10 items-center justify-center">
+                  <div class="h-4 w-4 rounded-full border-2 border-[#FF00FF] bg-[#090014] shadow-[0_0_12px_#FF00FF]" />
+                </div>
+
+                <!-- Mobile: left border accent -->
+                <div class="md:hidden absolute left-0 top-0 bottom-0 w-0.5 bg-gradient-to-b from-[#FF00FF] to-[#00FFFF]" />
+
+                <!-- Card -->
+                <div class={`flex-1 ${isLeft ? "md:pr-14" : "md:pl-14"} pl-5 md:pl-0`}>
+                  <div class="group border border-[#FF00FF]/20 border-t-2 border-t-[#00FFFF] bg-[#1a103c]/80 p-6 sm:p-7 backdrop-blur-sm transition-all duration-200 hover:-translate-y-1 hover:border-[#FF00FF]/40 hover:shadow-[0_0_25px_rgba(0,255,255,0.1)]">
+                    <!-- Date range badge -->
+                    <div class="inline-flex items-center gap-2 border border-[#FF9900]/30 bg-[#FF9900]/5 px-3 py-1 font-mono text-xs uppercase tracking-widest text-[#FF9900] mb-4">
+                      {startYear} — {endYear}
+                    </div>
+
+                    <!-- Company name -->
+                    <h3 class="font-heading font-bold text-xl md:text-2xl uppercase tracking-wide text-[#E0E0E0] mb-1.5 drop-shadow-[0_0_8px_rgba(224,224,224,0.1)]">
+                      {url ? (
+                        <a
+                          href={url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          class="hover:text-[#00FFFF] hover:drop-shadow-[0_0_8px_rgba(0,255,255,0.6)] transition-all duration-200"
+                        >
+                          {name}
+                        </a>
+                      ) : (
+                        <span>{name}</span>
+                      )}
+                    </h3>
+
+                    <!-- Position -->
+                    <p class="font-mono text-sm text-[#00FFFF] mb-4 tracking-wide">
+                      <span class="text-[#FF00FF] mr-1">&gt;</span>
+                      {position}
+                    </p>
+
+                    <!-- Summary -->
+                    <p class="font-mono text-sm text-[#E0E0E0]/55 leading-relaxed">
+                      {summary}
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Spacer for opposite side (desktop) -->
+                <div class="hidden md:block flex-1" />
+              </div>
+            );
+          })
+        }
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,60 @@
+---
+import cv from "../../data/cv.json";
+import SectionHeading from "../ui/SectionHeading.astro";
+
+const { education } = cv;
+---
+
+<section id="education" class="py-20 sm:py-32 px-4">
+  <div class="max-w-5xl mx-auto">
+    <SectionHeading tag="EDU.DAT" title="Education" />
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {
+        education.map(
+          ({ institution, area, studyType, startDate, endDate, score }) => {
+            const startYear = new Date(startDate).getFullYear();
+            const endYear = endDate
+              ? new Date(endDate).getFullYear()
+              : "Present";
+
+            return (
+              <div class="group relative border border-[#FF00FF]/20 border-t-2 border-t-[#FF00FF] bg-[#1a103c]/80 p-6 sm:p-8 backdrop-blur-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-[0_0_25px_rgba(255,0,255,0.1)] hover:border-[#FF00FF]/40">
+                <!-- Decorative corner accent -->
+                <div class="absolute bottom-0 right-0 h-6 w-6 border-b-2 border-r-2 border-[#00FFFF]/30" />
+
+                <!-- Institution name -->
+                <h3 class="font-heading font-bold text-lg md:text-xl uppercase tracking-wide text-[#00FFFF] mb-2 drop-shadow-[0_0_6px_rgba(0,255,255,0.7)]">
+                  {institution}
+                </h3>
+
+                <!-- Study type -->
+                <p class="font-mono text-sm text-[#E0E0E0]/80 mb-1">
+                  <span class="text-[#FF00FF] mr-1">&gt;</span>
+                  {studyType}
+                </p>
+
+                <!-- Area of study -->
+                <p class="font-mono text-sm text-[#E0E0E0]/55 mb-5">
+                  {area}
+                </p>
+
+                <!-- Date range + score -->
+                <div class="flex items-center justify-between flex-wrap gap-3">
+                  <div class="inline-flex items-center gap-2 border border-[#00FFFF]/30 bg-[#00FFFF]/5 px-3 py-1 font-mono text-xs uppercase tracking-widest text-[#00FFFF]">
+                    {startYear} — {endYear}
+                  </div>
+                  {score && (
+                    <div class="font-mono text-xs text-[#FF9900]/60 tracking-widest uppercase">
+                      GPA: {score}
+                    </div>
+                  )}
+                </div>
+              </div>
+            );
+          }
+        )
+      }
+    </div>
+  </div>
+</section>

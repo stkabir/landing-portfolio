@@ -1,0 +1,35 @@
+---
+interface Props {
+  tag: string;
+  title: string;
+  align?: "left" | "center";
+}
+
+const { tag, title, align = "left" } = Astro.props;
+const isCenter = align === "center";
+---
+
+<div class={`mb-12 sm:mb-16 ${isCenter ? "text-center" : ""}`}>
+  <!-- System tag / breadcrumb -->
+  <div
+    class={`font-mono text-xs uppercase tracking-[0.3em] text-[#FF00FF]/60 mb-3 flex items-center gap-3 ${isCenter ? "justify-center" : ""}`}
+  >
+    <span class="text-[#FF00FF]">›</span>
+    <span>{tag}</span>
+    <div
+      class={`h-px bg-gradient-to-r from-[#FF00FF]/30 to-transparent w-24 ${isCenter ? "hidden" : ""}`}
+    ></div>
+  </div>
+
+  <!-- Section title -->
+  <h2
+    class={`font-heading font-black text-3xl sm:text-4xl md:text-5xl uppercase tracking-tight text-[#E0E0E0] drop-shadow-[0_0_15px_rgba(224,224,224,0.15)] ${isCenter ? "mx-auto" : ""}`}
+  >
+    {title}
+  </h2>
+
+  <!-- Gradient accent bar -->
+  <div
+    class={`mt-4 h-[3px] w-20 bg-gradient-to-r from-[#FF00FF] to-[#00FFFF] ${isCenter ? "mx-auto" : ""}`}
+  ></div>
+</div>
