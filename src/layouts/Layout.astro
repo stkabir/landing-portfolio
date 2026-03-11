@@ -17,36 +17,40 @@ const { title, description = "Portfolio" } = Astro.props;
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <!-- Google Fonts: Orbitron (headings) + Share Tech Mono (body/UI) -->
+    <!-- Google Fonts: Orbitron (headings) + JetBrains Mono (body) + Share Tech Mono (UI) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Share+Tech+Mono&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=JetBrains+Mono:wght@400;500;600&family=Share+Tech+Mono&display=swap"
       rel="stylesheet"
     />
   </head>
   <body>
     <!-- ─── Fixed atmospheric background (z-0) ─────────────────────── -->
     <div class="fixed inset-0 z-0 pointer-events-none overflow-hidden">
-      <!-- Floating "sun" gradient orb -->
+      <!-- Enhanced cyberpunk gradient orbs -->
       <div
-        class="absolute -top-40 left-1/2 -translate-x-1/2 h-[600px] w-[600px] rounded-full blur-[100px] bg-gradient-to-b from-[#FF9900] to-[#FF00FF] opacity-[0.13]"
+        class="absolute -top-40 left-1/2 -translate-x-1/2 h-[600px] w-[600px] rounded-full blur-[100px] bg-linear-to-b from-accent to-accentSecondary opacity-[0.08]"
       ></div>
       <!-- Secondary cyan glow, bottom-right -->
       <div
-        class="absolute -bottom-48 -right-32 h-[500px] w-[500px] rounded-full blur-[140px] bg-[#00FFFF] opacity-[0.07]"
+        class="absolute -bottom-48 -right-32 h-[500px] w-[500px] rounded-full blur-[140px] bg-accentTertiary opacity-[0.05]"
+      ></div>
+      <!-- Tertiary magenta accent, top-left -->
+      <div
+        class="absolute top-20 -left-20 h-[400px] w-[400px] rounded-full blur-[120px] bg-accentSecondary opacity-[0.04]"
+      ></div>
+      <!-- Success green accent, bottom-left -->
+      <div
+        class="absolute bottom-20 -left-32 h-[300px] w-[300px] rounded-full blur-[100px] bg-success opacity-[0.03]"
       ></div>
     </div>
 
-    <!-- ─── Perspective grid floor ─────────────────────────────────── -->
+    <!-- ─── Circuit grid floor ─────────────────────────────────── -->
     <div
-      class="fixed bottom-0 left-0 right-0 z-0 pointer-events-none"
+      class="fixed bottom-0 left-0 right-0 z-0 pointer-events-none cyber-grid"
       style="
         height: 42vh;
-        background-image:
-          linear-gradient(transparent 94%, rgba(255,0,255,0.4) 94%),
-          linear-gradient(90deg, transparent 94%, rgba(255,0,255,0.4) 94%);
-        background-size: 50px 50px;
         transform: perspective(350px) rotateX(55deg) scaleX(1.6);
         transform-origin: bottom center;
         mask-image: linear-gradient(to bottom, transparent 0%, black 100%);
@@ -54,23 +58,13 @@ const { title, description = "Portfolio" } = Astro.props;
       "
     ></div>
 
-    <!-- ─── CRT scanlines overlay (z-50, above everything) ─────────── -->
+    <!-- Enhanced CRT scanlines overlay with noise -->
+    <div class="fixed inset-0 z-50 pointer-events-none cyber-scanlines cyber-noise"></div>
+
+    <!-- RGB chromatic aberration with new colors -->
     <div
-      class="fixed inset-0 z-50 pointer-events-none"
-      style="
-        background: repeating-linear-gradient(
-          0deg,
-          rgba(0,0,0,0) 0px,
-          rgba(0,0,0,0) 2px,
-          rgba(0,0,0,0.13) 2px,
-          rgba(0,0,0,0.13) 4px
-        );
-      "
-    ></div>
-    <!-- RGB chromatic aberration -->
-    <div
-      class="fixed inset-0 z-50 pointer-events-none opacity-25"
-      style="background: linear-gradient(90deg, rgba(255,0,0,0.05), rgba(0,255,0,0.02), rgba(0,0,255,0.05));"
+      class="fixed inset-0 z-50 pointer-events-none opacity-20"
+      style="background: linear-gradient(90deg, rgba(255,42,109,0.03), rgba(0,240,255,0.01), rgba(252,238,10,0.03));"
     ></div>
 
     <!-- ─── Page content ────────────────────────────────────────────── -->

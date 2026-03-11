@@ -8,12 +8,12 @@ const navLinks = [
 ---
 
 <header
-  class="fixed top-0 left-0 right-0 z-40 flex items-center justify-between px-4 sm:px-8 py-4 border-b border-[#2D1B4E]/60 bg-[#090014]/80 backdrop-blur-md"
+  class="fixed top-0 left-0 right-0 z-40 flex items-center justify-between px-4 sm:px-8 py-4 border-b border-border bg-background/90 backdrop-blur-md cyber-chamfer-sm mx-4 mt-4 max-w-7xl lg:mx-auto"
 >
-  <!-- Logo -->
+  <!-- Logo with enhanced gradient -->
   <a
     href="#"
-    class="font-heading font-black text-sm sm:text-base uppercase tracking-widest bg-gradient-to-r from-[#FF9900] via-[#FF00FF] to-[#00FFFF] bg-clip-text text-transparent drop-shadow-[0_0_10px_rgba(255,0,255,0.4)]"
+    class="font-heading font-black text-sm sm:text-base uppercase tracking-widest bg-linear-to-r from-accent via-accentSecondary to-accentTertiary bg-clip-text text-transparent drop-shadow-[0_0_15px_rgba(0,240,255,0.5)]"
   >
     &lt;KABIR/&gt;
   </a>
@@ -24,7 +24,7 @@ const navLinks = [
       navLinks.map(({ label, href }) => (
         <a
           href={href}
-          class="font-mono text-xs uppercase tracking-widest px-4 py-2 text-[#E0E0E0]/50 hover:text-[#00FFFF] hover:bg-[#00FFFF]/5 transition-all duration-200 border border-transparent hover:border-[#00FFFF]/20"
+          class="cyber-focus font-ui text-xs uppercase tracking-widest px-4 py-2 text-mutedForeground hover:text-accent hover:bg-accent/5 transition-all duration-200 border border-transparent hover:border-accent/20 cyber-chamfer-sm"
         >
           {label}
         </a>
@@ -34,10 +34,9 @@ const navLinks = [
 
   <!-- Status indicator -->
   <div
-    class="flex items-center gap-2 font-mono text-[10px] uppercase tracking-widest text-[#E0E0E0]/30"
+    class="flex items-center gap-2 font-ui text-[10px] uppercase tracking-widest text-mutedForeground"
   >
-    <span class="h-1.5 w-1.5 rounded-full bg-[#00FFFF] animate-pulse shadow-[0_0_6px_#00FFFF]"
-    ></span>
+    <span class="h-1.5 w-1.5 rounded-full bg-accent animate-pulse neon-glow-sm"></span>
     <span class="hidden sm:inline">SYS:ONLINE</span>
   </div>
 </header>

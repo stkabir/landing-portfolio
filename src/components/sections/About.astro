@@ -10,67 +10,104 @@ const { summary, name } = basics;
   <div class="max-w-4xl mx-auto">
     <SectionHeading tag="ABOUT.SH" title="About Me" />
 
-    <!-- Terminal window container -->
+    <!-- Enhanced terminal window container -->
     <div
-      class="border-2 border-[#00FFFF] bg-black/70 shadow-[0_0_30px_rgba(0,255,255,0.12)] backdrop-blur-sm"
+      class="border border-border bg-card cyber-chamfer neon-glow-sm cyber-noise"
     >
-      <!-- Window title bar -->
+      <!-- Window title bar with enhanced styling -->
       <div
-        class="flex items-center gap-3 border-b border-[#00FFFF]/40 bg-[#00FFFF]/5 px-4 py-3"
+        class="flex items-center gap-3 border-b border-border bg-muted px-4 py-3"
       >
-        <!-- Window control dots -->
+        <!-- Enhanced window control dots with neon glow -->
         <div class="flex gap-2">
           <div
-            class="h-3 w-3 rounded-full bg-[#FF00FF] shadow-[0_0_6px_#FF00FF]"
+            class="h-3 w-3 rounded-full bg-destructive neon-glow-sm animate-pulse"
           ></div>
           <div
-            class="h-3 w-3 rounded-full bg-[#FF9900] shadow-[0_0_6px_#FF9900]"
+            class="h-3 w-3 rounded-full bg-success neon-glow-sm"
           ></div>
           <div
-            class="h-3 w-3 rounded-full bg-[#00FFFF] shadow-[0_0_6px_#00FFFF]"
+            class="h-3 w-3 rounded-full bg-accentTertiary neon-glow-sm"
           ></div>
         </div>
         <span
-          class="font-mono text-xs text-[#00FFFF]/50 uppercase tracking-widest ml-2"
+          class="font-ui text-xs text-mutedForeground uppercase tracking-widest ml-2 flex-1"
         >
           user@{name.toLowerCase().replace(/\s+/g, "-")}:~/about.sh
         </span>
+        <!-- Connection status indicator -->
+        <div class="flex items-center gap-2">
+          <span class="w-2 h-2 bg-success rounded-full animate-pulse neon-glow-sm"></span>
+          <span class="text-success text-xs font-ui">CONNECTED</span>
+        </div>
       </div>
 
-      <!-- Terminal body -->
-      <div class="p-6 sm:p-8 font-mono space-y-4">
-        <!-- Command line -->
-        <div class="flex items-center gap-3 text-[#FF00FF]/50 text-sm">
-          <span class="text-[#00FFFF]/60">$</span>
-          <span class="text-[#E0E0E0]/30">cat about.txt</span>
+      <!-- Enhanced terminal body -->
+      <div class="p-6 sm:p-8 font-body space-y-4 relative">
+        <!-- Data stream effect in background -->
+        <div class="absolute inset-0 pointer-events-none opacity-5">
+          <div class="absolute top-4 left-8 w-0.5 h-20 bg-accent animate-pulse"></div>
+          <div class="absolute top-12 right-12 w-0.5 h-16 bg-accentSecondary animate-pulse" style="animation-delay: 0.5s"></div>
         </div>
 
-        <!-- Output text -->
+        <!-- Enhanced command line -->
+        <div class="flex items-center gap-3 text-accentSecondary/60 text-sm relative z-10">
+          <span class="text-accentTertiary/60">$</span>
+          <span class="text-mutedForeground font-mono">cat about.txt</span>
+          <span class="text-success/50 text-xs ml-auto">[EXECUTING]</span>
+        </div>
+
+        <!-- Enhanced output text with data visualization -->
         <p
-          class="text-[#E0E0E0]/80 text-sm sm:text-base leading-relaxed pl-4 border-l-2 border-[#FF00FF]/25"
+          class="text-foreground text-sm sm:text-base leading-relaxed pl-4 border-l-2 border-accent/25 relative z-10"
         >
           {summary}
         </p>
 
-        <!-- Second command line (decorative) -->
-        <div class="flex items-center gap-3 text-sm pt-2">
-          <span class="text-[#00FFFF]/60">$</span>
-          <span class="text-[#FF9900]/40 text-xs tracking-wider"
+        <!-- Enhanced second command line with status -->
+        <div class="flex items-center gap-3 text-sm pt-2 relative z-10">
+          <span class="text-accentTertiary/60">$</span>
+          <span class="text-accentSecondary/40 text-xs tracking-wider font-mono"
             >echo $STATUS</span
           >
         </div>
-        <div class="flex items-center gap-3 text-sm pl-4">
-          <span class="text-[#00FFFF] text-xs tracking-widest"
-            >AVAILABLE FOR WORK · OPEN TO COLLABORATIONS</span
-          >
+        <div class="flex items-center gap-3 text-sm pl-4 relative z-10">
+          <span class="text-success text-xs tracking-widest font-mono">● AVAILABLE_FOR_WORK:TRUE</span>
+          <span class="text-border">|</span>
+          <span class="text-accent text-xs tracking-widest font-mono">● COLLABORATIONS:OPEN</span>
         </div>
 
-        <!-- Blinking cursor -->
-        <div class="flex items-center gap-3 text-sm pt-1">
-          <span class="text-[#00FFFF]/60">$</span>
+        <!-- Enhanced system status display -->
+        <div class="flex items-center gap-3 text-sm pt-2 relative z-10">
+          <span class="text-accentTertiary/60">$</span>
+          <span class="text-mutedForeground/50 text-xs font-mono">system_check --status</span>
+        </div>
+        <div class="grid grid-cols-2 gap-4 pl-4 text-xs font-mono relative z-10">
+          <div class="flex items-center gap-2">
+            <span class="w-1.5 h-1.5 bg-success rounded-full animate-pulse"></span>
+            <span class="text-success/80">PORTFOLIO_ONLINE</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="w-1.5 h-1.5 bg-accent rounded-full animate-pulse"></span>
+            <span class="text-accent/80">RESPONSIVE_MODE</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="w-1.5 h-1.5 bg-accentTertiary rounded-full animate-pulse"></span>
+            <span class="text-accentTertiary/80">NEON_RENDERING</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="w-1.5 h-1.5 bg-accentSecondary rounded-full animate-pulse"></span>
+            <span class="text-accentSecondary/80">GLITCH_ACTIVE</span>
+          </div>
+        </div>
+
+        <!-- Enhanced blinking cursor with glow -->
+        <div class="flex items-center gap-3 text-sm pt-3 relative z-10">
+          <span class="text-accentTertiary/60">$</span>
           <span
-            class="inline-block h-4 w-2 bg-[#00FFFF] animate-pulse shadow-[0_0_6px_#00FFFF]"
+            class="inline-block h-4 w-2 bg-accent animate-pulse neon-glow-sm"
           ></span>
+          <span class="text-mutedForeground/30 text-xs ml-1">awaiting_command...</span>
         </div>
       </div>
     </div>
