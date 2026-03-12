@@ -288,6 +288,21 @@ ul {
   animation: title-glitch 5s ease-in-out infinite;
 }
 
+/* WhatsApp specific styling */
+.cyber-whatsapp {
+  --whatsapp-green: #25d366;
+  --whatsapp-green-dark: #128c7e;
+  border-color: var(--whatsapp-green) !important;
+  color: var(--whatsapp-green) !important;
+}
+
+.cyber-whatsapp:hover {
+  background-color: var(--whatsapp-green) !important;
+  color: #000 !important;
+  border-color: var(--whatsapp-green) !important;
+  box-shadow: 0 0 15px var(--whatsapp-green), 0 0 30px rgba(37, 211, 102, 0.4) !important;
+}
+
 /* Project title animation keyframes */
 @keyframes title-glow {
   0% {
