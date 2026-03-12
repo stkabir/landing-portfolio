@@ -1,51 +1,40 @@
 @import "tailwindcss";
 
 @theme {
-  /* Cyberpunk Design Tokens - Based on Reference Image */
-
   /* Typography */
   --font-heading: "Orbitron", "Share Tech Mono", monospace;
   --font-body: "JetBrains Mono", "Share Tech Mono", monospace;
   --font-ui: "Share Tech Mono", monospace;
 
-  /* Cyberpunk Color Palette - Matching Reference */
-  --color-background: #0a0a0f;        /* Dark void background */
-  --color-foreground: #e0e0e0;        /* Primary text */
-  --color-card: #1a1a2e;              /* Card backgrounds */
-  --color-muted: #16213e;             /* UI chrome */
-  --color-mutedForeground: #6b7280;   /* Secondary text */
+  /* Cyberpunk Color Palette */
+  --color-background: #0a0a0f;
+  --color-foreground: #e0e0e0;
+  --color-card: #12121a;
+  --color-muted: #1c1c2e;
+  --color-mutedForeground: #6b7280;
 
-  /* Neon Accents - Cyberpunk Style */
-  --color-accent: #00ff88;            /* Neon green - primary */
-  --color-accentSecondary: #ff00ff;   /* Neon magenta */
-  --color-accentTertiary: #00ffff;    /* Neon cyan */
-  --color-success: #00ff88;           /* Success green */
+  /* Neon Accents */
+  --color-accent: #00ff88;
+  --color-accentSecondary: #ff00ff;
+  --color-accentTertiary: #00ffff;
+  --color-success: #00ff88;
 
   /* Extended Palette */
-  --color-border: #2a2a3a;            /* Subtle borders */
-  --color-input: #1a1a2e;             /* Input backgrounds */
-  --color-ring: #00ff88;              /* Focus ring */
-  --color-destructive: #ff3366;       /* Danger red */
+  --color-border: #2a2a3a;
+  --color-input: #12121a;
+  --color-ring: #00ff88;
+  --color-destructive: #ff3366;
 
-  /* Enhanced Neon Glow Effects */
+  /* Neon Glow Shadow Tokens */
   --box-shadow-neon: 0 0 5px #00ff88, 0 0 10px rgba(0, 255, 136, 0.3), 0 0 20px rgba(0, 255, 136, 0.1);
   --box-shadow-neon-sm: 0 0 3px #00ff88, 0 0 6px rgba(0, 255, 136, 0.2);
   --box-shadow-neon-lg: 0 0 10px #00ff88, 0 0 20px rgba(0, 255, 136, 0.4), 0 0 40px rgba(0, 255, 136, 0.2);
-
-  /* Secondary neon (magenta) */
   --box-shadow-neon-secondary: 0 0 5px #ff00ff, 0 0 15px rgba(255, 0, 255, 0.4), 0 0 30px rgba(255, 0, 255, 0.2);
-
-  /* Tertiary neon (cyan) */
   --box-shadow-neon-tertiary: 0 0 5px #00ffff, 0 0 15px rgba(0, 255, 255, 0.4), 0 0 30px rgba(0, 255, 255, 0.2);
-
-  /* Animations */
-  --animate-pulse-slow: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
 /* Base resets */
-*,
-*::before,
-*::after {
+*, *::before, *::after {
   box-sizing: border-box;
 }
 
@@ -72,10 +61,10 @@ ul {
   padding: 0;
 }
 
-/* Cyberpunk Utility Classes */
+/* ─── Tailwind v4 Utilities (@utility enables hover:, focus:, etc. variants) ── */
 
-/* Chamfered corners */
-.cyber-chamfer {
+/* Chamfered corners — 45° cuts replacing border-radius */
+@utility cyber-chamfer {
   clip-path: polygon(
     0 10px, 10px 0,
     calc(100% - 10px) 0, 100% 10px,
@@ -84,7 +73,7 @@ ul {
   );
 }
 
-.cyber-chamfer-sm {
+@utility cyber-chamfer-sm {
   clip-path: polygon(
     0 6px, 6px 0,
     calc(100% - 6px) 0, 100% 6px,
@@ -93,7 +82,7 @@ ul {
   );
 }
 
-.cyber-chamfer-lg {
+@utility cyber-chamfer-lg {
   clip-path: polygon(
     0 16px, 16px 0,
     calc(100% - 16px) 0, 100% 16px,
@@ -103,27 +92,55 @@ ul {
 }
 
 /* Neon glow utilities */
-.neon-glow {
+@utility neon-glow {
   box-shadow: var(--box-shadow-neon);
 }
 
-.neon-glow-sm {
+@utility neon-glow-sm {
   box-shadow: var(--box-shadow-neon-sm);
 }
 
-.neon-glow-lg {
+@utility neon-glow-lg {
   box-shadow: var(--box-shadow-neon-lg);
 }
 
-.neon-glow-secondary {
+@utility neon-glow-secondary {
   box-shadow: var(--box-shadow-neon-secondary);
 }
 
-.neon-glow-tertiary {
+@utility neon-glow-tertiary {
   box-shadow: var(--box-shadow-neon-tertiary);
 }
 
-/* Glitch text effect - Matching Reference */
+/* Circuit grid background */
+@utility cyber-grid {
+  background-image:
+    linear-gradient(rgba(0, 255, 136, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 255, 136, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+/* Accessibility focus ring */
+@utility cyber-focus {
+  outline: none;
+  &:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--color-ring), 0 0 0 4px var(--color-background);
+  }
+}
+
+/* Terminal blinking cursor */
+@utility cyber-cursor {
+  &::after {
+    content: "_";
+    animation: blink 1s step-end infinite;
+    color: var(--color-accent);
+  }
+}
+
+/* ─── Complex CSS classes (pseudo-elements, multi-rule) ─────────────────── */
+
+/* Glitch chromatic aberration text effect */
 .cyber-glitch {
   position: relative;
   color: var(--color-accent);
@@ -160,7 +177,7 @@ ul {
   clip-path: inset(0 0 0 0);
 }
 
-/* Scanline overlay */
+/* CRT scanline overlay */
 .cyber-scanlines::after {
   content: "";
   position: absolute;
@@ -179,7 +196,7 @@ ul {
   z-index: 1;
 }
 
-/* Noise texture overlay */
+/* Ambient noise/gradient texture */
 .cyber-noise::before {
   content: "";
   position: absolute;
@@ -197,22 +214,8 @@ ul {
   animation: noise-shift 10s ease-in-out infinite alternate;
 }
 
-/* Circuit grid background */
-.cyber-grid {
-  background-image:
-    linear-gradient(rgba(0, 255, 136, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 255, 136, 0.03) 1px, transparent 1px);
-  background-size: 50px 50px;
-}
+/* ─── Keyframe Animations ────────────────────────────────────────────────── */
 
-/* Terminal cursor animation */
-.cyber-cursor::after {
-  content: "_";
-  animation: blink 1s step-end infinite;
-  color: var(--color-accent);
-}
-
-/* Animations */
 @keyframes glitch {
   0%, 100% { transform: translate(0); }
   20% { transform: translate(-2px, 2px); }
@@ -249,12 +252,21 @@ ul {
   50% { opacity: 0; }
 }
 
-/* Focus styles for accessibility */
-.cyber-focus {
-  outline: none;
-}
+/* ─── Accessibility ──────────────────────────────────────────────────────── */
 
-.cyber-focus:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 2px var(--color-ring), 0 0 0 4px var(--color-background);
+@media (prefers-reduced-motion: reduce) {
+  .cyber-glitch {
+    animation: none;
+    /* keep static chromatic aberration, disable motion */
+    text-shadow:
+      0.05em 0 0 rgba(255, 0, 255, 0.4),
+      -0.025em -0.05em 0 rgba(0, 255, 255, 0.4);
+  }
+  .cyber-glitch::before,
+  .cyber-glitch::after {
+    display: none;
+  }
+  .cyber-noise::before {
+    animation: none;
+  }
 }

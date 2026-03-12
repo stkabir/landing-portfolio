@@ -195,6 +195,35 @@
   ],
   "projects": [
     {
+      "name": "Verde Caribe",
+      "description": "Freelance",
+      "highlights": [
+        "Astro", "Tailwind", "React"
+      ],
+      "url": "https://verdecaribe.com"
+    },{
+      "name": "Brickell News",
+      "description": "Freelance",
+      "highlights": [
+        "Laravel", "Astro"
+      ],
+      "url": "https://brickell.news"
+    },{
+      "name": "Azzure Condos",
+      "description": "Freelance",
+      "highlights": [
+        "Astro"
+      ],
+      "url": "https://azzurecondos.com"
+    },{
+      "name": "Cotizador Crédito",
+      "description": "Freelance",
+      "highlights": [
+        "Astro", "React"
+      ],
+      "url": "https://cotizadorcredito.com"
+    },
+    {
       "name": "Lomas Travel",
       "description": "Dexabyte",
       "highlights": [

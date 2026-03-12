@@ -6,10 +6,10 @@ const { work } = cv;
 ---
 
 <section id="experience" class="py-20 sm:py-32 px-4 relative overflow-hidden">
-  <!-- Faint dot pattern -->
+  <!-- Faint dot pattern using design tokens -->
   <div
     class="absolute inset-0 pointer-events-none opacity-[0.04]"
-    style="background-image: radial-gradient(#00FFFF 1px, transparent 1px); background-size: 24px 24px;"
+    style="background-image: radial-gradient(var(--color-accentTertiary) 1px, transparent 1px); background-size: 24px 24px;"
   ></div>
 
   <div class="max-w-5xl mx-auto relative z-10">
@@ -19,12 +19,12 @@ const { work } = cv;
     <div class="relative">
       <!-- Central vertical line (desktop only) -->
       <div
-        class="hidden md:block absolute left-1/2 -translate-x-px top-0 bottom-0 w-px bg-gradient-to-b from-[#FF00FF] via-[#00FFFF]/50 to-transparent"
+        class="hidden md:block absolute left-1/2 -translate-x-px top-0 bottom-0 w-px bg-linear-to-b from-accentSecondary via-accentTertiary/50 to-transparent"
       ></div>
 
       <div class="flex flex-col gap-12 md:gap-20">
         {
-          work.map(({ name, position, url, startDate, endDate, summary }, i) => {
+          work.map(({ name, position, startDate, endDate, summary }, i) => {
             const startYear = new Date(startDate).getFullYear();
             const endYear = endDate
               ? new Date(endDate).getFullYear()
@@ -37,46 +37,38 @@ const { work } = cv;
               >
                 <!-- Timeline node (desktop) -->
                 <div class="hidden md:flex absolute left-1/2 -translate-x-1/2 z-10 items-center justify-center">
-                  <div class="h-4 w-4 rounded-full border-2 border-[#FF00FF] bg-[#090014] shadow-[0_0_12px_#FF00FF]" />
+                  <div class="h-4 w-4 rounded-full border-2 border-accentSecondary bg-background shadow-[0_0_12px_var(--color-accentSecondary)]" />
                 </div>
 
                 <!-- Mobile: left border accent -->
-                <div class="md:hidden absolute left-0 top-0 bottom-0 w-0.5 bg-gradient-to-b from-[#FF00FF] to-[#00FFFF]" />
+                <div class="md:hidden absolute left-0 top-0 bottom-0 w-0.5 bg-linear-to-b from-accentSecondary to-accentTertiary" />
 
                 <!-- Card -->
                 <div class={`flex-1 ${isLeft ? "md:pr-14" : "md:pl-14"} pl-5 md:pl-0`}>
-                  <div class="group border border-[#FF00FF]/20 border-t-2 border-t-[#00FFFF] bg-[#1a103c]/80 p-6 sm:p-7 backdrop-blur-sm transition-all duration-200 hover:-translate-y-1 hover:border-[#FF00FF]/40 hover:shadow-[0_0_25px_rgba(0,255,255,0.1)]">
+                  <div class="group relative border border-accentSecondary/20 border-t-2 border-t-accentTertiary bg-card/90 p-6 sm:p-7 cyber-chamfer transition-all duration-200 hover:-translate-y-1 hover:border-accentSecondary/50 hover:neon-glow-tertiary">
                     <!-- Date range badge -->
-                    <div class="inline-flex items-center gap-2 border border-[#FF9900]/30 bg-[#FF9900]/5 px-3 py-1 font-mono text-xs uppercase tracking-widest text-[#FF9900] mb-4">
+                    <div class="inline-flex items-center gap-2 border border-accent/30 bg-accent/5 px-3 py-1 font-ui text-xs uppercase tracking-widest text-accent mb-4">
                       {startYear} — {endYear}
                     </div>
 
                     <!-- Company name -->
-                    <h3 class="font-heading font-bold text-xl md:text-2xl uppercase tracking-wide text-[#E0E0E0] mb-1.5 drop-shadow-[0_0_8px_rgba(224,224,224,0.1)]">
-                      {url ? (
-                        <a
-                          href={url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          class="hover:text-[#00FFFF] hover:drop-shadow-[0_0_8px_rgba(0,255,255,0.6)] transition-all duration-200"
-                        >
-                          {name}
-                        </a>
-                      ) : (
-                        <span>{name}</span>
-                      )}
+                    <h3 class="font-heading font-bold text-xl md:text-2xl uppercase tracking-wide text-foreground mb-1.5">
+                      <span>{name}</span>
                     </h3>
 
                     <!-- Position -->
-                    <p class="font-mono text-sm text-[#00FFFF] mb-4 tracking-wide">
-                      <span class="text-[#FF00FF] mr-1">&gt;</span>
+                    <p class="font-body text-sm text-accentTertiary mb-4 tracking-wide">
+                      <span class="text-accentSecondary mr-1">&gt;</span>
                       {position}
                     </p>
 
                     <!-- Summary -->
-                    <p class="font-mono text-sm text-[#E0E0E0]/55 leading-relaxed">
+                    <p class="font-body text-sm text-foreground/55 leading-relaxed">
                       {summary}
                     </p>
+
+                    <!-- Decorative bottom-right corner accent -->
+                    <div class="absolute bottom-0 right-0 h-5 w-5 border-b-2 border-r-2 border-accentTertiary/20 group-hover:border-accentTertiary/60 transition-colors duration-200" />
                   </div>
                 </div>
 

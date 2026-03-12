@@ -19,33 +19,33 @@ const { education } = cv;
               : "Present";
 
             return (
-              <div class="group relative border border-[#FF00FF]/20 border-t-2 border-t-[#FF00FF] bg-[#1a103c]/80 p-6 sm:p-8 backdrop-blur-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-[0_0_25px_rgba(255,0,255,0.1)] hover:border-[#FF00FF]/40">
+              <div class="group relative border border-accentSecondary/20 border-t-2 border-t-accentSecondary bg-card/90 p-6 sm:p-8 cyber-chamfer transition-all duration-200 hover:-translate-y-1 hover:border-accentSecondary/50 hover:neon-glow-secondary">
                 <!-- Decorative corner accent -->
-                <div class="absolute bottom-0 right-0 h-6 w-6 border-b-2 border-r-2 border-[#00FFFF]/30" />
+                <div class="absolute bottom-0 right-0 h-6 w-6 border-b-2 border-r-2 border-accentTertiary/30 group-hover:border-accentTertiary/60 transition-colors duration-200" />
 
                 <!-- Institution name -->
-                <h3 class="font-heading font-bold text-lg md:text-xl uppercase tracking-wide text-[#00FFFF] mb-2 drop-shadow-[0_0_6px_rgba(0,255,255,0.7)]">
+                <h3 class="font-heading font-bold text-lg md:text-xl uppercase tracking-wide text-accentTertiary mb-2 drop-shadow-[0_0_6px_rgba(0,255,255,0.5)]">
                   {institution}
                 </h3>
 
                 <!-- Study type -->
-                <p class="font-mono text-sm text-[#E0E0E0]/80 mb-1">
-                  <span class="text-[#FF00FF] mr-1">&gt;</span>
+                <p class="font-body text-sm text-foreground/80 mb-1">
+                  <span class="text-accentSecondary mr-1">&gt;</span>
                   {studyType}
                 </p>
 
                 <!-- Area of study -->
-                <p class="font-mono text-sm text-[#E0E0E0]/55 mb-5">
+                <p class="font-body text-sm text-foreground/55 mb-5">
                   {area}
                 </p>
 
                 <!-- Date range + score -->
                 <div class="flex items-center justify-between flex-wrap gap-3">
-                  <div class="inline-flex items-center gap-2 border border-[#00FFFF]/30 bg-[#00FFFF]/5 px-3 py-1 font-mono text-xs uppercase tracking-widest text-[#00FFFF]">
+                  <div class="inline-flex items-center gap-2 border border-accentTertiary/30 bg-accentTertiary/5 px-3 py-1 font-ui text-xs uppercase tracking-widest text-accentTertiary">
                     {startYear} — {endYear}
                   </div>
                   {score && (
-                    <div class="font-mono text-xs text-[#FF9900]/60 tracking-widest uppercase">
+                    <div class="font-ui text-xs text-accent/60 tracking-widest uppercase">
                       GPA: {score}
                     </div>
                   )}
