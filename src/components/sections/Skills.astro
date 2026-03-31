@@ -4,11 +4,30 @@ import SectionHeading from "../ui/SectionHeading.astro";
 
 const { skills } = cv;
 
+// Group skills by category
+const grouped = skills.reduce<Record<string, typeof skills>>((acc, skill) => {
+  const cat = skill.category ?? "Otros";
+  if (!acc[cat]) acc[cat] = [];
+  acc[cat].push(skill);
+  return acc;
+}, {});
+
+const categories = Object.keys(grouped);
+
 // Pre-compute full class strings so Tailwind scanner sees them
 const magentaClasses =
   "border-accentSecondary/40 bg-accentSecondary/5 text-accentSecondary hover:bg-accentSecondary hover:text-background hover:border-accentSecondary hover:shadow-[0_0_18px_var(--color-accentSecondary)]";
 const cyanClasses =
   "border-accentTertiary/40 bg-accentTertiary/5 text-accentTertiary hover:bg-accentTertiary hover:text-background hover:border-accentTertiary hover:shadow-[0_0_18px_var(--color-accentTertiary)]";
+
+// Category icon map
+const catIcons: Record<string, string> = {
+  "Backend": "⬡",
+  "Frontend": "◈",
+  "Base de Datos": "⬢",
+  "DevOps": "◎",
+  "Integraciones": "⊕",
+};
 ---
 
 <section id="skills" class="py-20 sm:py-32 px-4">
@@ -25,41 +44,56 @@ const cyanClasses =
           <div class="h-3 w-3 rounded-full bg-accentTertiary shadow-[0_0_5px_var(--color-accentTertiary)]"></div>
         </div>
         <span class="font-ui text-xs text-mutedForeground uppercase tracking-widest ml-2">
-          skills/ — {skills.length} items
+          skills/ — {skills.length} items · {categories.length} categorías
         </span>
       </div>
 
       <!-- Content -->
-      <div class="p-6 sm:p-8">
+      <div class="p-6 sm:p-8 space-y-8">
         <!-- Terminal ls command -->
-        <div class="flex items-center gap-3 font-body text-sm text-accentSecondary/35 mb-6">
+        <div class="flex items-center gap-3 font-body text-sm text-accentSecondary/35">
           <span class="text-accentTertiary/50">$</span>
-          <span class="text-foreground/25 text-xs tracking-wider">ls -la ./skills/ | sort</span>
+          <span class="text-foreground/25 text-xs tracking-wider">ls -la ./skills/ | sort --group-by-category</span>
         </div>
 
-        <!-- Skill badges — skewed, alternating magenta / cyan -->
-        <ul class="flex flex-wrap gap-3">
-          {
-            skills.map(({ name }, i) => {
-              const variantClasses = i % 2 === 0 ? magentaClasses : cyanClasses;
-              return (
-                <li
-                  class={`group -skew-x-6 inline-block cursor-default border-2 px-4 py-2 font-ui text-sm uppercase tracking-wider transition-all duration-200 hover:skew-x-0 ${variantClasses}`}
-                >
-                  <span class="inline-block skew-x-6 group-hover:skew-x-0 transition-transform duration-200">
-                    {name}
-                  </span>
-                </li>
-              );
-            })
-          }
-        </ul>
+        <!-- Categories -->
+        {categories.map((cat, catIdx) => {
+          const catSkills = grouped[cat];
+          const icon = catIcons[cat] ?? "◇";
+          return (
+            <div>
+              <!-- Category header -->
+              <div class="flex items-center gap-3 mb-3">
+                <span class="text-accentSecondary text-sm">{icon}</span>
+                <span class="font-ui text-xs uppercase tracking-[0.25em] text-accentSecondary/70">{cat}</span>
+                <div class="flex-1 h-px bg-accentSecondary/15"></div>
+                <span class="font-ui text-[10px] text-foreground/20">{catSkills.length}</span>
+              </div>
+
+              <!-- Skill badges -->
+              <ul class="flex flex-wrap gap-2.5 pl-5">
+                {catSkills.map(({ name }, i) => {
+                  const variantClasses = (catIdx + i) % 2 === 0 ? magentaClasses : cyanClasses;
+                  return (
+                    <li
+                      class={`group -skew-x-6 inline-block cursor-default border-2 px-4 py-1.5 font-ui text-sm uppercase tracking-wider transition-all duration-200 hover:skew-x-0 ${variantClasses}`}
+                    >
+                      <span class="inline-block skew-x-6 group-hover:skew-x-0 transition-transform duration-200">
+                        {name}
+                      </span>
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+          );
+        })}
       </div>
 
       <!-- Status bar -->
       <div class="border-t border-border bg-background px-4 py-2 flex items-center justify-between">
         <span class="font-ui text-[10px] text-foreground/30 uppercase tracking-widest">
-          {skills.length} skills loaded
+          {skills.length} skills loaded · {categories.length} modules
         </span>
         <span class="font-ui text-[10px] text-accent/40 uppercase tracking-widest">STATUS: OPERATIONAL</span>
       </div>

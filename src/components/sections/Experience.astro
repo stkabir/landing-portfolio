@@ -24,7 +24,7 @@ const { work } = cv;
 
       <div class="flex flex-col gap-12 md:gap-20">
         {
-          work.map(({ name, position, startDate, endDate, summary }, i) => {
+          work.map(({ name, position, startDate, endDate, summary, highlights, stack }, i) => {
             const startYear = new Date(startDate).getFullYear();
             const endYear = endDate
               ? new Date(endDate).getFullYear()
@@ -63,9 +63,32 @@ const { work } = cv;
                     </p>
 
                     <!-- Summary -->
-                    <p class="font-body text-sm text-foreground/55 leading-relaxed">
+                    <p class="font-body text-sm text-foreground/55 leading-relaxed mb-4">
                       {summary}
                     </p>
+
+                    <!-- Highlights as bullet points -->
+                    {highlights && highlights.length > 0 && (
+                      <ul class="space-y-2 mb-5">
+                        {highlights.map((item) => (
+                          <li class="flex items-start gap-2.5 font-body text-xs text-foreground/65 leading-relaxed">
+                            <span class="mt-1 shrink-0 h-1.5 w-1.5 rounded-full bg-accentTertiary shadow-[0_0_5px_var(--color-accentTertiary)]" />
+                            {item}
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+
+                    <!-- Stack badges -->
+                    {stack && stack.length > 0 && (
+                      <div class="flex flex-wrap gap-1.5 pt-4 border-t border-border/50">
+                        {stack.map((tech) => (
+                          <span class="-skew-x-6 inline-block border border-accentSecondary/25 bg-accentSecondary/5 px-2.5 py-0.5 font-ui text-[10px] uppercase tracking-widest text-accentSecondary/70">
+                            <span class="inline-block skew-x-6">{tech}</span>
+                          </span>
+                        ))}
+                      </div>
+                    )}
 
                     <!-- Decorative bottom-right corner accent -->
                     <div class="absolute bottom-0 right-0 h-5 w-5 border-b-2 border-r-2 border-accentTertiary/20 group-hover:border-accentTertiary/60 transition-colors duration-200" />

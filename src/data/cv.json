@@ -1,12 +1,12 @@
 {
   "basics": {
     "name": "Kabir Alberto Padilla",
-    "label": "Desarrollador Full Stack.",
+    "label": "Desarrollador Fullstack",
     "image": "/me.jpg",
     "email": "kabiralberto10@gmail.com",
-    "phone": "+52 9981090161",
-    "url": "",
-    "summary": "Soy un calificado y profesional desarrollador con más de 5 años de experiencia en backend, frontend y bases de datos, fuertes habilidades creativas y analíticas para resolver problemas, me gusta mantener un aprendizaje continuo, eso me permite adaptarme fácilmente a nuevas tecnologías",
+    "phone": "+52 9981169584",
+    "url": "https://cv-proyect.netlify.app",
+    "summary": "Desarrollador Fullstack con más de 7 años de experiencia en desarrollo web backend y frontend. Especializado en PHP, Laravel, Astro.js y JavaScript, con sólida experiencia en diseño de APIs REST, arquitectura MVC, bases de datos MySQL y despliegue en VPS mediante Dokploy y Netlify. Capacidad probada para liderar proyectos desde cero, integrar tecnologías modernas y entregar soluciones con resultados medibles.",
     "location": {
       "address": "",
       "postalCode": "77537",
@@ -17,285 +17,348 @@
     "profiles": [
       {
         "network": "Whatsapp",
-        "username": "9981090161",
-        "url": "https://wa.me/529981090161"
+        "username": "9981169584",
+        "url": "https://wa.me/529981169584"
       }
     ]
   },
   "work": [
     {
-      "name": "Ancona Autopartes",
-      "position": "Desarrollador Jr",
-      "startDate": "2018-12-01",
-      "endDate": "2019-12-01",
-      "summary": " Formé parte del equipo de programación para aplicaciones de desarrollo interno por parte de la empresa en diferentes áreas de la misma, que sirven para ayudar y mejorar los procesos actuales. Por ejemplo, una App de escritorio (C#) que sirve para registrar entradas y salidas de los repartidores mediante un lector de barras, y un Sistema web (React) para la administración y uso interno de la empresa.",
+      "name": "Verde Caribe",
+      "position": "Desarrollador Fullstack",
+      "startDate": "2024-04-01",
+      "endDate": null,
+      "summary": "Desarrollo de más de 3 proyectos web desde cero para empresa del sector paisajismo y construcción. Arquitectura desacoplada: frontend en Astro.js y backend en Laravel comunicados mediante API REST.",
+      "stack": ["Astro.js", "Laravel", "MySQL", "REST API", "Dokploy", "Netlify", "Git"],
       "highlights": [
-        "Started the company"
-      ]
-    },
-    {
-      "name": "Soluciones Tecnológicas",
-      "position": "Desarrollador Full Stack",
-      "startDate": "2020-01-01",
-      "endDate": "2022-05-01",
-      "summary": "Desarrollé varios proyectos desde cero en Laravel, uno de los cuales es un marketplace, que contiene una pasarela de pago, 3 dashboards para diferentes tipos de usuario, envío de correos, su propia API, mapas personalizados de Google y es amigable con SEO.",
-      "highlights": [
-        "Started the company"
-      ]
-    },
-    {
-      "name": "Avansys",
-      "position": "Desarrollador Full Stack",
-      "startDate": "2022-06-01",
-      "endDate": "2023-01-01",
-      "summary": "Participé en varios proyectos hechos en Laravel, cuentan con un sistema de autenticación, roles y permisos, uno de los proyectos fue para el gobierno de Jalisco que consiste en poder tomar medidas de diferentes cuerpos de agua para poder llevar un registro y comparar estadísticas, ver resultados, etc.",
-      "highlights": [
-        "Started the company"
+        "Diseñé e implementé la arquitectura completa: BD, API REST en Laravel y frontend en Astro.js — logrando tiempos de carga ~60% más rápidos que soluciones SPA tradicionales gracias a generación estática.",
+        "Optimicé SEO y rendimiento con Island Architecture de Astro: hidratación parcial y zero JS por defecto.",
+        "Desplegué backend en VPS con Dokploy y frontend en Netlify con CI/CD — reduciendo el tiempo de deploy a producción a menos de 10 minutos.",
+        "Entregué cada proyecto desde el prototipo hasta producción, iterando junto al cliente en cada etapa."
       ]
     },
     {
       "name": "Dexabyte",
-      "position": "Desarrollador Senior",
+      "position": "Desarrollador Fullstack",
       "startDate": "2023-01-01",
       "endDate": "2024-04-01",
-      "summary": "Colaboré en varios proyectos cómo Desarrollador Senior hechos en Laravel, Yii, Node js y PHP puro, son sistemas para la empresa o clientes de la empresa, hice modificaciones y desarrollé nuevas funciones acorde a las necesidades de los usuarios. Realicé 2 proyectos desde cero, hechos con Livewire que inserta y modifica datos, envía notificaciones por correo y validaciones en tiempo real.",
+      "summary": "Colaboración en múltiples proyectos empresariales y desarrollo de sistemas desde cero.",
+      "stack": ["Laravel", "Yii", "Node.js", "Livewire", "PHP", "MySQL"],
       "highlights": [
-        "Started the company"
+        "Desarrollé 2 sistemas desde cero con Livewire: datos en tiempo real, notificaciones por correo y validación — adoptados por el equipo como base para proyectos futuros.",
+        "Optimicé sistemas legados reduciendo tiempos de respuesta en operaciones clave en ~35%.",
+        "Participé en definición de arquitectura, revisión de código y documentación técnica."
       ]
     },
     {
-      "name": "Freelance",
-      "position": "Desarrollador Full Stack",
-      "startDate": "2024-04-01",
-      "endDate": "2025-02-01",
-      "summary": "Utilizando Laravel y Livewire, participé como desarrollador full stack dentro de un proyecto del gobierno de la ciudad de México, que se encarga de otorgar créditos a mujeres rurales para emprender. Con la tecnología de Python y Flet, me encuentro desarrollando una aplicación móvil para una empresa de transportes y tours, que tiene como principal finalidad monitorear la operación de los choferes y gestionar la asignación de tareas.",
+      "name": "Avansys",
+      "position": "Desarrollador Laravel",
+      "startDate": "2022-06-01",
+      "endDate": "2023-01-01",
+      "summary": "Proyectos de mediana y alta complejidad, incluyendo sistema para el sector público.",
+      "stack": ["Laravel", "PHP", "MySQL", "API REST"],
       "highlights": [
-        "Started the company"
+        "Desarrollé módulo para el Gobierno de Jalisco: registro de mediciones en más de 50 cuerpos de agua, comparativa estadística y generación de reportes.",
+        "Implementé sistema de autenticación con roles y permisos granulares para 3 tipos de usuario.",
+        "Integré API REST para consumo de datos externos y exportación de resultados en múltiples formatos."
+      ]
+    },
+    {
+      "name": "Soluciones Tecnológicas",
+      "position": "Desarrollador Laravel",
+      "startDate": "2020-01-01",
+      "endDate": "2022-05-01",
+      "summary": "Desarrollo de aplicaciones web completas desde cero en entorno PHP / Laravel.",
+      "stack": ["Laravel", "PHP", "React", "MySQL", "Google Maps API", "REST API"],
+      "highlights": [
+        "Construí un marketplace completo con pasarela de pago, 3 dashboards por rol, API REST, Google Maps API y SEO — activo en producción más de 2 años con múltiples vendedores registrados.",
+        "Lideré la adopción de Laravel en el equipo, capacitando a 3 desarrolladores en el framework.",
+        "Entregué múltiples proyectos reduciendo tiempos de proceso interno de los clientes en más de un 40%."
+      ]
+    },
+    {
+      "name": "Ancona Autopartes",
+      "position": "Desarrollador Junior",
+      "startDate": "2018-12-01",
+      "endDate": "2019-12-01",
+      "summary": "Primeros proyectos de desarrollo interno para digitalizar procesos operativos de la empresa.",
+      "stack": ["C#", "React", ".NET", "MySQL"],
+      "highlights": [
+        "App de escritorio en C# para control de repartidores con lector de código de barras y panel de métricas — reemplazó un proceso 100% manual.",
+        "Sistema web interno en React para administración y gestión operativa."
       ]
     }
   ],
-  "education": [{
-    "institution": "Universidad del Sur",
-    "url": "https://www.uoc.edu/portal/es/index.html",
-    "area": "Ingeniero de Software",
-    "studyType": "Bachelor",
-    "startDate": "2017-09-01",
-    "endDate": "2019-04-01",
-    "score": "10.0"
-  }],
+  "education": [
+    {
+      "institution": "Universidad del Sur",
+      "url": "",
+      "area": "Ingeniería en Sistemas Computacionales",
+      "studyType": "Licenciatura",
+      "startDate": "2017-09-01",
+      "endDate": "2019-04-01",
+      "score": "10.0",
+      "location": "Cancún, México"
+    }
+  ],
   "skills": [
     {
       "name": "PHP",
       "level": "Avanzado",
-      "keywords": [
-        "Desarrollo Web", "Backend", "Servidor"
-      ]
+      "category": "Backend",
+      "keywords": ["Desarrollo Web", "Backend", "Servidor"]
     },
     {
       "name": "Laravel",
       "level": "Avanzado",
-      "keywords": [
-        "Desarrollo Web", "Backend", "Servidor"
-      ]
+      "category": "Backend",
+      "keywords": ["Desarrollo Web", "Backend", "Framework"]
     },
     {
-      "name": "C#",
+      "name": "Node.js",
       "level": "Avanzado",
-      "keywords": [
-        "Desarrollo Web", "Backend", "Servidor"
-      ]
+      "category": "Backend",
+      "keywords": ["Desarrollo Web", "Backend", "JavaScript"]
     },
     {
-      "name": "Pyhton",
+      "name": "Livewire",
       "level": "Avanzado",
-      "keywords": [
-        "Desarrollo Web", "Backend", "Servidor"
-      ]
+      "category": "Backend",
+      "keywords": ["Laravel", "Tiempo Real", "Componentes"]
     },
     {
-      "name": "HTML",
-      "level": "Master",
-      "keywords": [
-        "Desarrollo Web", "Frontend"
-      ]
+      "name": "Yii",
+      "level": "Intermedio",
+      "category": "Backend",
+      "keywords": ["PHP", "Framework", "Backend"]
     },
     {
-      "name": "CSS",
-      "level": "Master",
-      "keywords": [
-        "Desarrollo Web", "Frontend", "Diseño Responsive"
-      ]
-    },
-    {
-      "name": "JavaScript",
-      "level": "Master",
-      "keywords": [
-        "Desarrollo Web", "Frontend", "Backend", "Fullstack"
-      ]
-    },
-    {
-      "name": "Tailwind",
+      "name": "API REST",
       "level": "Avanzado",
-      "keywords": [
-        "Desarrollo Web", "Frontend", "CSS Framework", "Diseño Responsive"
-      ]
+      "category": "Backend",
+      "keywords": ["Backend", "Integración", "HTTP"]
     },
     {
-      "name": "TypeScript",
+      "name": "Astro.js",
       "level": "Avanzado",
-      "keywords": [
-        "Desarrollo Web", "Frontend", "Backend", "JavaScript Superset"
-      ]
-    },
-    {
-      "name": "MySQL",
-      "level": "Avanzado",
-      "keywords": [
-        "Bases de Datos", "SQL", "Almacenamiento de Datos", "Backend"
-      ]
-    },
-    {
-      "name": "Git",
-      "level": "Avanzado",
-      "keywords": [
-        "Control de Versiones", "Colaboración", "Código Fuente"
-      ]
-    },
-    {
-      "name": "GitHub",
-      "level": "Avanzado",
-      "keywords": [
-        "Control de Versiones", "Colaboración", "Código Fuente", "Git"
-      ]
-    },
-    {
-      "name": "Next.js",
-      "level": "Avanzado",
-      "keywords": [
-        "Desarrollo Web", "Frontend", "React Framework", "SSR", "Static Generation"
-      ]
+      "category": "Frontend",
+      "keywords": ["Desarrollo Web", "Frontend", "SSG"]
     },
     {
       "name": "React",
       "level": "Avanzado",
-      "keywords": [
-        "Desarrollo Web", "Frontend", "JavaScript Library", "UI"
-      ]
+      "category": "Frontend",
+      "keywords": ["Desarrollo Web", "Frontend", "JavaScript Library", "UI"]
+    },
+    {
+      "name": "Next.js",
+      "level": "Avanzado",
+      "category": "Frontend",
+      "keywords": ["Desarrollo Web", "Frontend", "React Framework", "SSR"]
+    },
+    {
+      "name": "JavaScript",
+      "level": "Master",
+      "category": "Frontend",
+      "keywords": ["Desarrollo Web", "Frontend", "Backend", "Fullstack"]
+    },
+    {
+      "name": "TypeScript",
+      "level": "Avanzado",
+      "category": "Frontend",
+      "keywords": ["Desarrollo Web", "Frontend", "Backend", "JavaScript Superset"]
+    },
+    {
+      "name": "jQuery",
+      "level": "Avanzado",
+      "category": "Frontend",
+      "keywords": ["Desarrollo Web", "Frontend", "JavaScript"]
+    },
+    {
+      "name": "HTML5",
+      "level": "Master",
+      "category": "Frontend",
+      "keywords": ["Desarrollo Web", "Frontend"]
+    },
+    {
+      "name": "CSS3",
+      "level": "Master",
+      "category": "Frontend",
+      "keywords": ["Desarrollo Web", "Frontend", "Diseño Responsive"]
+    },
+    {
+      "name": "Tailwind",
+      "level": "Avanzado",
+      "category": "Frontend",
+      "keywords": ["Desarrollo Web", "Frontend", "CSS Framework"]
+    },
+    {
+      "name": "Bootstrap",
+      "level": "Avanzado",
+      "category": "Frontend",
+      "keywords": ["Desarrollo Web", "Frontend", "CSS Framework"]
+    },
+    {
+      "name": "MySQL",
+      "level": "Avanzado",
+      "category": "Base de Datos",
+      "keywords": ["Bases de Datos", "SQL", "Backend"]
+    },
+    {
+      "name": "SQL",
+      "level": "Avanzado",
+      "category": "Base de Datos",
+      "keywords": ["Bases de Datos", "Consultas", "Backend"]
+    },
+    {
+      "name": "MongoDB",
+      "level": "Intermedio",
+      "category": "Base de Datos",
+      "keywords": ["Bases de Datos", "NoSQL", "Backend"]
+    },
+    {
+      "name": "Git",
+      "level": "Avanzado",
+      "category": "DevOps",
+      "keywords": ["Control de Versiones", "Colaboración"]
+    },
+    {
+      "name": "GitHub",
+      "level": "Avanzado",
+      "category": "DevOps",
+      "keywords": ["Control de Versiones", "Colaboración", "Git"]
+    },
+    {
+      "name": "Dokploy",
+      "level": "Avanzado",
+      "category": "DevOps",
+      "keywords": ["Deploy", "VPS", "CI/CD"]
+    },
+    {
+      "name": "Netlify",
+      "level": "Avanzado",
+      "category": "DevOps",
+      "keywords": ["Deploy", "Frontend", "CI/CD"]
+    },
+    {
+      "name": "CI/CD",
+      "level": "Avanzado",
+      "category": "DevOps",
+      "keywords": ["Deploy", "Automatización", "DevOps"]
+    },
+    {
+      "name": "Google Maps API",
+      "level": "Avanzado",
+      "category": "Integraciones",
+      "keywords": ["API", "Mapas", "Frontend"]
+    },
+    {
+      "name": "SMTP",
+      "level": "Avanzado",
+      "category": "Integraciones",
+      "keywords": ["Correo", "Notificaciones", "Backend"]
+    },
+    {
+      "name": "SEO",
+      "level": "Avanzado",
+      "category": "Integraciones",
+      "keywords": ["Marketing", "Performance", "Frontend"]
     }
   ],
   "languages": [
     {
-      "language": "Spanish",
-      "fluency": "Native speaker"
+      "language": "Español",
+      "fluency": "Nativo"
     },
     {
-      "language": "English",
-      "fluency": "Advanced"
+      "language": "Inglés",
+      "fluency": "Intermedio — lectura técnica avanzada"
     }
   ],
   "projects": [
     {
       "name": "Verde Caribe",
-      "description": "Freelance",
-      "highlights": [
-        "Astro", "Tailwind", "React"
-      ],
-      "url": "https://verdecaribe.com"
-    },{
-      "name": "Brickell News",
-      "description": "Freelance",
-      "highlights": [
-        "Laravel", "Astro"
-      ],
-      "url": "https://brickell.news"
-    },{
-      "name": "Azzure Condos",
-      "description": "Freelance",
-      "highlights": [
-        "Astro"
-      ],
-      "url": "https://azzurecondos.com"
-    },{
-      "name": "Cotizador Crédito",
-      "description": "Freelance",
-      "highlights": [
-        "Astro", "React"
-      ],
-      "url": "https://simulador-credito-ulises.netlify.app"
+      "description": "Plataforma web para empresa de paisajismo y construcción. Arquitectura desacoplada: frontend en Astro.js y backend en Laravel con API REST. Tiempos de carga ~60% más rápidos que SPA tradicionales.",
+      "highlights": ["Astro.js", "Laravel", "MySQL", "REST API"],
+      "url": "https://verdecaribe.com",
+      "isActive": true
     },
     {
-      "name": "Lomas Travel",
-      "description": "Dexabyte",
-      "highlights": [
-        "Laravel"
-      ],
-      "url": "https://lomastravel.com"
+      "name": "Brickell News",
+      "description": "Portal de noticias con sistema de contenidos dinámico, optimizado para SEO y carga rápida.",
+      "highlights": ["Laravel", "Astro.js"],
+      "url": "https://brickell.news",
+      "isActive": true
+    },
+    {
+      "name": "Azzure Condos",
+      "description": "Landing page estática de alta performance para desarrollo inmobiliario de lujo.",
+      "highlights": ["Astro.js"],
+      "url": "https://azzurecondos.com",
+      "isActive": true
+    },
+    {
+      "name": "Cotizador Crédito",
+      "description": "Simulador interactivo de crédito financiero con cálculos en tiempo real y UX optimizada.",
+      "highlights": ["Astro.js", "React"],
+      "url": "https://simulador-credito-ulises.netlify.app",
+      "isActive": true
     },
     {
       "name": "Cluby",
-      "description": "Soluciones Tecnológicas",
-      "highlights": [
-        "Laravel"
-      ],
-      "url": "https://cluby.mx"
+      "description": "Marketplace completo con pasarela de pago, 3 dashboards por rol, Google Maps API y SEO técnico — activo en producción por más de 2 años.",
+      "highlights": ["Laravel", "PHP", "MySQL", "REST API"],
+      "url": "https://cluby.mx",
+      "isActive": true
     },
     {
       "name": "Agua Coecytjal",
-      "description": "Avansys",
-      "highlights": [
-        "Laravel"
-      ],
-      "url": "https://l.coecytjal.org.mx"
-    },
-    {
-      "name": "México me necesita",
-      "description": "Avansys",
-      "highlights": [
-        "PHP"
-      ],
-      "url": "https://mmn.org.mx"
+      "description": "Sistema gubernamental de monitoreo de calidad del agua para el Gobierno de Jalisco: registro de más de 50 cuerpos de agua con estadísticas comparativas.",
+      "highlights": ["Laravel", "PHP", "MySQL"],
+      "url": "https://l.coecytjal.org.mx",
+      "isActive": true
     },
     {
       "name": "Mujeres Rurales",
-      "description": "Freelance",
-      "highlights": [
-        "Laravel",
-        "Livewire"
-      ],
-      "url": "https://cdmx.gob.mx"
+      "description": "Sistema de otorgamiento de créditos a mujeres rurales para el Gobierno de la Ciudad de México. Flujos complejos de validación y roles de acceso.",
+      "highlights": ["Laravel", "Livewire", "MySQL"],
+      "url": "https://cdmx.gob.mx",
+      "isActive": false
     },
     {
-      "name": "Ancona",
-      "description": "Ancona Autopartes",
-      "highlights": [
-        "React"
-      ],
-      "url": "https://www.anconaautopartes.com"
+      "name": "Lomas Travel",
+      "description": "Sistema web para agencia de viajes con gestión de reservas, catálogos de destinos y panel administrativo.",
+      "highlights": ["Laravel", "MySQL"],
+      "url": "https://lomastravel.com",
+      "isActive": true
     },
     {
       "name": "Maroma Beach",
-      "description": "Dexabyte",
-      "highlights": [
-        "React"
-      ],
-      "url": "https://maromabeach.com/es/"
+      "description": "Sitio web para resort de lujo en la Riviera Maya con galería multimedia y sistema de reservas.",
+      "highlights": ["React", "Laravel"],
+      "url": "https://maromabeach.com/es/",
+      "isActive": true
     },
     {
       "name": "El Dorado Resort",
-      "description": "Dexabyte",
-      "highlights": [
-        "React"
-      ],
-      "url": "https://www.eldoradosparesorts.com.mx/destino"
+      "description": "Plataforma web para resort todo incluido en la Riviera Maya. Módulos de destinos, actividades y reservas.",
+      "highlights": ["React", "Laravel"],
+      "url": "https://www.eldoradosparesorts.com.mx/destino",
+      "isActive": true
     },
     {
       "name": "Dashboard Ohana",
-      "description": "Freelance",
-      "highlights": [
-        "Laravel",
-        "Livewire"
-      ],
-      "url": "https://ohanatransfers.com"
+      "description": "Panel administrativo para empresa de transfers turísticos: asignación de choferes, monitoreo de rutas y gestión operativa.",
+      "highlights": ["Laravel", "Livewire", "MySQL"],
+      "url": "https://ohanatransfers.com",
+      "isActive": true
+    },
+    {
+      "name": "México Me Necesita",
+      "description": "Plataforma institucional con sistema de autenticación, roles y permisos granulares para múltiples tipos de usuario.",
+      "highlights": ["PHP", "MySQL"],
+      "url": "https://mmn.org.mx",
+      "isActive": true
     }
   ]
 }
